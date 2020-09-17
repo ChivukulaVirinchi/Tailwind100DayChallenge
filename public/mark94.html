@@ -1,0 +1,887 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Messenger</title>
+  <link href="/build/tailwind.css" rel="stylesheet">
+  <meta name="description" content="Your gorgeous description">
+  <link href="URL" rel="canonical">
+  <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/css/all.min.css">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/MaterialDesign-Webfont/5.3.45/css/materialdesignicons.min.css">
+</head>
+
+
+<body>
+  
+<!-- component -->
+<style>
+  /* can be configured in tailwind.config.js */
+  .group:hover .group-hover\:block {
+    display: block;
+  }
+  .hover\:w-64:hover {
+    width: 45%;
+    }
+  
+  
+  /* NO NEED THIS CSS - just for custom scrollbar which can also be configured in tailwind.config.js*/
+  ::-webkit-scrollbar {
+    width: 2px;
+    height: 2px;
+  }
+  ::-webkit-scrollbar-button {
+    width: 0px;
+    height: 0px;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #2d3748;
+    border: 0px none #ffffff;
+    border-radius: 50px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #2b6cb0;
+  }
+  ::-webkit-scrollbar-thumb:active {
+    background: #000000;
+  }
+  ::-webkit-scrollbar-track {
+    background: #1a202c;
+    border: 0px none #ffffff;
+    border-radius: 50px;
+  }
+  ::-webkit-scrollbar-track:hover {
+    background: #666666;
+  }
+  ::-webkit-scrollbar-track:active {
+    background: #333333;
+  }
+  ::-webkit-scrollbar-corner {
+    background: transparent;
+  }
+  
+</style>
+
+<!-- Messenger Clone -->
+<div class="h-screen w-full flex antialiased text-gray-200 bg-gray-900 overflow-hidden">
+    <div class="flex-1 flex flex-col">
+     
+        <main class="flex-grow flex flex-row min-h-0">
+            <section class="flex flex-col flex-none overflow-auto w-24 hover:w-64 group lg:max-w-sm md:w-2/5 transition-all duration-300 ease-in-out">
+                <div class="header p-4 flex flex-row justify-between items-center flex-none">
+                    <div class="w-16 h-16 relative flex flex-shrink-0" style="filter: invert(100%);">
+                        <img class="rounded-full w-full h-full object-cover" alt="ravisankarchinnam"
+                             src="https://avatars3.githubusercontent.com/u/22351907?s=60"/>
+                    </div>
+                    <p class="text-md font-bold hidden md:block group-hover:block">Messenger</p>
+                    <a href="#" class="block rounded-full hover:bg-gray-700 bg-gray-800 w-10 h-10 p-2 hidden md:block group-hover:block">
+                        <svg viewBox="0 0 24 24" class="w-full h-full fill-current">
+                            <path
+                                    d="M6.3 12.3l10-10a1 1 0 0 1 1.4 0l4 4a1 1 0 0 1 0 1.4l-10 10a1 1 0 0 1-.7.3H7a1 1 0 0 1-1-1v-4a1 1 0 0 1 .3-.7zM8 16h2.59l9-9L17 4.41l-9 9V16zm10-2a1 1 0 0 1 2 0v6a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6c0-1.1.9-2 2-2h6a1 1 0 0 1 0 2H4v14h14v-6z"/>
+                        </svg>
+                    </a>
+                </div>
+                <div class="search-box p-4 flex-none">
+                    <form onsubmit="">
+                        <div class="relative">
+                            <label>
+                                <input class="rounded-full py-2 pr-6 pl-10 w-full border border-gray-800 focus:border-gray-700 bg-gray-800 focus:bg-gray-900 focus:outline-none text-gray-200 focus:shadow-md transition duration-300 ease-in"
+                                       type="text" value="" placeholder="Search Messenger"/>
+                                <span class="absolute top-0 left-0 mt-2 ml-3 inline-block">
+                                    <svg viewBox="0 0 24 24" class="w-6 h-6">
+                                        <path fill="#bbb"
+                                              d="M16.32 14.9l5.39 5.4a1 1 0 0 1-1.42 1.4l-5.38-5.38a8 8 0 1 1 1.41-1.41zM10 16a6 6 0 1 0 0-12 6 6 0 0 0 0 12z"/>
+                                    </svg>
+                                </span>
+                            </label>
+                        </div>
+                    </form>
+                </div>
+                <div class="active-users flex flex-row p-2 overflow-auto w-0 min-w-full">
+                    <div class="text-sm text-center mr-4">
+                        <button class="flex flex-shrink-0 focus:outline-none block bg-gray-800 text-gray-600 rounded-full w-20 h-20"
+                                type="button">
+                            <svg class="w-full h-full fill-current" viewBox="0 0 24 24">
+                                <path d="M17 11a1 1 0 0 1 0 2h-4v4a1 1 0 0 1-2 0v-4H7a1 1 0 0 1 0-2h4V7a1 1 0 0 1 2 0v4h4z"/>
+                            </svg>
+                        </button>
+                        <p>Your Story</p>
+                    </div>
+                    <div class="text-sm text-center mr-4"><div class="p-1 border-4 border-blue-600 rounded-full"><div class="w-16 h-16 relative flex flex-shrink-0">
+                        <img class="shadow-md rounded-full w-full h-full object-cover"
+                             src="https://randomuser.me/api/portraits/women/12.jpg"
+                             alt=""
+                        />
+                    </div></div><p>Anna</p></div>
+                    <div class="text-sm text-center mr-4"><div class="p-1 border-4 border-transparent rounded-full"><div class="w-16 h-16 relative flex flex-shrink-0">
+                        <img class="shadow-md rounded-full w-full h-full object-cover"
+                             src="https://randomuser.me/api/portraits/men/75.jpg"
+                             alt=""
+                        />
+                        <div class="absolute bg-gray-900 p-1 rounded-full bottom-0 right-0">
+                            <div class="bg-green-500 rounded-full w-3 h-3"></div>
+                        </div>
+                    </div></div><p>Jeff</p></div>
+                    <div class="text-sm text-center mr-4"><div class="p-1 border-4 border-blue-600 rounded-full"><div class="w-16 h-16 relative flex flex-shrink-0">
+                        <img class="shadow-md rounded-full w-full h-full object-cover"
+                             src="https://randomuser.me/api/portraits/women/42.jpg"
+                             alt=""
+                        />
+                    </div></div><p>Cathy</p></div>
+                    <div class="text-sm text-center mr-4"><div class="p-1 border-4 border-transparent rounded-full"><div class="w-16 h-16 relative flex flex-shrink-0">
+                        <img class="shadow-md rounded-full w-full h-full object-cover"
+                             src="https://randomuser.me/api/portraits/women/87.jpg"
+                             alt=""
+                        />
+                        <div class="absolute bg-gray-900 p-1 rounded-full bottom-0 right-0">
+                            <div class="bg-green-500 rounded-full w-3 h-3"></div>
+                        </div>
+                    </div></div><p>Madona</p></div>
+                    <div class="text-sm text-center mr-4"><div class="p-1 border-4 border-transparent rounded-full"><div class="w-16 h-16 relative flex flex-shrink-0">
+                        <img class="shadow-md rounded-full w-full h-full object-cover"
+                             src="https://randomuser.me/api/portraits/women/23.jpg"
+                             alt=""
+                        />
+                        <div class="absolute bg-gray-900 p-1 rounded-full bottom-0 right-0">
+                            <div class="bg-green-500 rounded-full w-3 h-3"></div>
+                        </div>
+                    </div></div><p>Emma</p></div>
+                    <div class="text-sm text-center mr-4"><div class="p-1 border-4 border-blue-600 rounded-full"><div class="w-16 h-16 relative flex flex-shrink-0">
+                        <img class="shadow-md rounded-full w-full h-full object-cover"
+                             src="https://randomuser.me/api/portraits/men/65.jpg"
+                             alt=""
+                        />
+                    </div></div><p>Mark</p></div>
+                    <div class="text-sm text-center mr-4"><div class="p-1 border-4 border-blue-600 rounded-full"><div class="w-16 h-16 relative flex flex-shrink-0">
+                        <img class="shadow-md rounded-full w-full h-full object-cover"
+                             src="https://randomuser.me/api/portraits/women/65.jpg"
+                             alt=""
+                        />
+                    </div></div><p>Eva</p></div>
+                    <div class="text-sm text-center mr-4"><div class="p-1 border-4 border-transparent rounded-full"><div class="w-16 h-16 relative flex flex-shrink-0">
+                        <img class="shadow-md rounded-full w-full h-full object-cover"
+                             src="https://randomuser.me/api/portraits/men/31.jpg"
+                             alt=""
+                        />
+                        <div class="absolute bg-gray-900 p-1 rounded-full bottom-0 right-0">
+                            <div class="bg-green-500 rounded-full w-3 h-3"></div>
+                        </div>
+                    </div></div><p>Max</p></div>
+                    <div class="text-sm text-center mr-4"><div class="p-1 border-4 border-blue-600 rounded-full"><div class="w-16 h-16 relative flex flex-shrink-0">
+                        <img class="shadow-md rounded-full w-full h-full object-cover"
+                             src="https://randomuser.me/api/portraits/men/81.jpg"
+                             alt=""
+                        />
+                    </div></div><p>Adam</p></div>
+                </div>
+                <div class="contacts p-2 flex-1 overflow-y-scroll">
+                    <div class="flex justify-between items-center p-3 hover:bg-gray-800 rounded-lg relative">
+                        <div class="w-16 h-16 relative flex flex-shrink-0">
+                            <img class="shadow-md rounded-full w-full h-full object-cover"
+                                 src="data:image/jpeg;base64,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"
+                                 alt=""
+                            />
+                        </div>
+                        <div class="flex-auto min-w-0 ml-4 mr-6 hidden md:block group-hover:block">
+                            <p>Angelina Jolie</p>
+                            <div class="flex items-center text-sm text-gray-600">
+                                <div class="min-w-0">
+                                    <p class="truncate">Ok, see you at the subway in a bit.</p>
+                                </div>
+                                <p class="ml-2 whitespace-no-wrap">Just now</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex justify-between items-center p-3 hover:bg-gray-800 rounded-lg relative">
+                        <div class="w-16 h-16 relative flex flex-shrink-0">
+                            <img class="shadow-md rounded-full w-full h-full object-cover"
+                                 src="data:image/jpeg;base64,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"
+                                 alt=""
+                            />
+                            <div class="absolute bg-gray-900 p-1 rounded-full bottom-0 right-0">
+                                <div class="bg-green-500 rounded-full w-3 h-3"></div>
+                            </div>
+                        </div>
+                        <div class="flex-auto min-w-0 ml-4 mr-6 hidden md:block group-hover:block">
+                            <p class="font-bold">Tony Stark</p>
+                            <div class="flex items-center text-sm font-bold">
+                                <div class="min-w-0">
+                                    <p class="truncate">Hey, Are you there?</p>
+                                </div>
+                                <p class="ml-2 whitespace-no-wrap">10min</p>
+                            </div>
+                        </div>
+                        <div class="bg-blue-700 w-3 h-3 rounded-full flex flex-shrink-0 hidden md:block group-hover:block"></div>
+                    </div>
+                    <div class="flex justify-between items-center p-3 bg-gray-800 rounded-lg relative">
+                        <div class="w-16 h-16 relative flex flex-shrink-0">
+                            <img class="shadow-md rounded-full w-full h-full object-cover"
+                                 src="data:image/jpeg;base64,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"
+                                 alt=""
+                            />
+                        </div>
+                        <div class="flex-auto min-w-0 ml-4 mr-6 hidden md:block group-hover:block">
+                            <p>Scarlett Johansson</p>
+                            <div class="flex items-center text-sm text-gray-600">
+                                <div class="min-w-0">
+                                    <p class="truncate">You sent a photo.</p>
+                                </div>
+                                <p class="ml-2 whitespace-no-wrap">1h</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex justify-between items-center p-3 hover:bg-gray-800 rounded-lg relative">
+                        <div class="w-16 h-16 relative flex flex-shrink-0">
+                            <img class="shadow-md rounded-full w-full h-full object-cover"
+                                 src="https://randomuser.me/api/portraits/men/12.jpg"
+                                 alt=""
+                            />
+                        </div>
+                        <div class="flex-auto min-w-0 ml-4 mr-6 hidden md:block group-hover:block">
+                            <p>John Snow</p>
+                            <div class="flex items-center text-sm text-gray-600">
+                                <div class="min-w-0">
+                                    <p class="truncate">You missed a call John.
+                                    </p>
+                                </div>
+                                <p class="ml-2 whitespace-no-wrap">4h</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex justify-between items-center p-3 hover:bg-gray-800 rounded-lg relative">
+                        <div class="w-16 h-16 relative flex flex-shrink-0">
+                            <img class="shadow-md rounded-full w-full h-full object-cover"
+                                 src="https://randomuser.me/api/portraits/women/23.jpg"
+                                 alt="User2"
+                            />
+                        </div>
+                        <div class="flex-auto min-w-0 ml-4 mr-6 hidden md:block group-hover:block">
+                            <p>Emma Watson</p>
+                            <div class="flex items-center text-sm text-gray-600">
+                                <div class="min-w-0">
+                                    <p class="truncate">You sent a video.
+                                    </p>
+                                </div>
+                                <p class="ml-2 whitespace-no-wrap">11 Feb</p>
+                            </div>
+                        </div>
+                        <div class="w-4 h-4 flex flex-shrink-0 hidden md:block group-hover:block">
+                            <img class="rounded-full w-full h-full object-cover" alt="user2"
+                                 src="https://randomuser.me/api/portraits/women/23.jpg"/>
+                        </div>
+                    </div>
+                    <div class="flex justify-between items-center p-3 hover:bg-gray-800 rounded-lg relative">
+                        <div class="w-16 h-16 relative flex flex-shrink-0">
+                            <img class="shadow-md rounded-full w-full h-full object-cover"
+                                 src="https://randomuser.me/api/portraits/women/87.jpg"
+                                 alt="User2"
+                            />
+                            <div class="absolute bg-gray-900 p-1 rounded-full bottom-0 right-0">
+                                <div class="bg-green-500 rounded-full w-3 h-3"></div>
+                            </div>
+                        </div>
+                        <div class="flex-auto min-w-0 ml-4 mr-6 hidden md:block group-hover:block">
+                            <p>Sunny Leone</p>
+                            <div class="flex items-center text-sm text-gray-600">
+                                <div class="min-w-0">
+                                    <p class="truncate">Ah, it was an awesome one night stand.
+                                    </p>
+                                </div>
+                                <p class="ml-2 whitespace-no-wrap">1 Feb</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex justify-between items-center p-3 hover:bg-gray-800 rounded-lg relative">
+                        <div class="w-16 h-16 relative flex flex-shrink-0">
+                            <img class="shadow-md rounded-full w-full h-full object-cover"
+                                 src="https://randomuser.me/api/portraits/men/45.jpg"
+                                 alt="User2"
+                            />
+                        </div>
+                        <div class="flex-auto min-w-0 ml-4 mr-6 hidden md:block group-hover:block">
+                            <p>Bruce Lee</p>
+                            <div class="flex items-center text-sm text-gray-600">
+                                <div class="min-w-0">
+                                    <p class="truncate">You are a great human being.
+                                    </p>
+                                </div>
+                                <p class="ml-2 whitespace-no-wrap">23 Jan</p>
+                            </div>
+                        </div>
+                        <div class="w-4 h-4 flex flex-shrink-0 hidden md:block group-hover:block">
+                            <img class="rounded-full w-full h-full object-cover" alt="user2"
+                                 src="https://randomuser.me/api/portraits/men/45.jpg"/>
+                        </div>
+                    </div>
+                    <div class="flex justify-between items-center p-3 hover:bg-gray-800 rounded-lg relative">
+                        <div class="w-16 h-16 relative flex flex-shrink-0">
+                            <img class="shadow-md rounded-full w-10 h-10 object-cover absolute ml-6"
+                                 src="https://randomuser.me/api/portraits/men/22.jpg"
+                                 alt="User2"
+                            />
+                            <img class="shadow-md rounded-full w-10 h-10 object-cover absolute mt-6"
+                                 src="https://randomuser.me/api/portraits/men/55.jpg"
+                                 alt="User2"
+                            />
+                            <div class="absolute bg-gray-900 p-1 rounded-full bottom-0 right-0">
+                                <div class="bg-green-500 rounded-full w-3 h-3"></div>
+                            </div>
+                        </div>
+                        <div class="flex-auto min-w-0 ml-4 mr-6 hidden md:block group-hover:block">
+                            <p>TailwindCSS Group</p>
+                            <div class="flex items-center text-sm text-gray-600">
+                                <div class="min-w-0">
+                                    <p class="truncate">Adam: Hurray, Version 2 is out now!!.
+                                    </p>
+                                </div>
+                                <p class="ml-2 whitespace-no-wrap">23 Jan</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex justify-between items-center p-3 hover:bg-gray-800 rounded-lg relative">
+                        <div class="w-16 h-16 relative flex flex-shrink-0">
+                            <img class="shadow-md rounded-full w-full h-full object-cover"
+                                 src="https://randomuser.me/api/portraits/men/34.jpg"
+                                 alt="User2"
+                            />
+                        </div>
+                        <div class="flex-auto min-w-0 ml-4 mr-6 hidden md:block group-hover:block">
+                            <p>Will Smith</p>
+                            <div class="flex items-center text-sm text-gray-600">
+                                <div class="min-w-0">
+                                    <p class="truncate">WTF dude!! absofuckingloutely.
+                                    </p>
+                                </div>
+                                <p class="ml-2 whitespace-no-wrap">13 Dec</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex justify-between items-center p-3 hover:bg-gray-800 rounded-lg relative">
+                        <div class="w-16 h-16 relative flex flex-shrink-0">
+                            <img class="shadow-md rounded-full w-full h-full object-cover"
+                                 src="https://randomuser.me/api/portraits/men/22.jpg"
+                                 alt="User2"
+                            />
+                        </div>
+                        <div class="flex-auto min-w-0 ml-4 mr-6 hidden md:block group-hover:block">
+                            <p>Brad Pitt</p>
+                            <div class="flex items-center text-sm text-gray-600">
+                                <div class="min-w-0">
+                                    <p class="truncate">you called Brad.
+                                    </p>
+                                </div>
+                                <p class="ml-2 whitespace-no-wrap">31 Dec</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex justify-between items-center p-3 hover:bg-gray-800 rounded-lg relative">
+                        <div class="w-16 h-16 relative flex flex-shrink-0">
+                            <img class="shadow-md rounded-full w-full h-full object-cover"
+                                 src="https://randomuser.me/api/portraits/men/99.jpg"
+                                 alt="User2"
+                            />
+                            <div class="absolute bg-gray-900 p-1 rounded-full bottom-0 right-0">
+                                <div class="bg-green-500 rounded-full w-3 h-3"></div>
+                            </div>
+                        </div>
+                        <div class="flex-auto min-w-0 ml-4 mr-6 hidden md:block group-hover:block">
+                            <p>Tom Hanks</p>
+                            <div class="flex items-center text-sm text-gray-600">
+                                <div class="min-w-0">
+                                    <p class="truncate">Tom called you.
+                                    </p>
+                                </div>
+                                <p class="ml-2 whitespace-no-wrap">31 Dec</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex justify-between items-center p-3 hover:bg-gray-800 rounded-lg relative">
+                        <div class="w-16 h-16 relative flex flex-shrink-0">
+                            <img class="shadow-md rounded-full w-full h-full object-cover"
+                                 src="https://randomuser.me/api/portraits/men/41.jpg"
+                                 alt="User2"
+                            />
+                        </div>
+                        <div class="flex-auto min-w-0 ml-4 mr-6 hidden md:block group-hover:block">
+                            <p>Dwayne Johnson</p>
+                            <div class="flex items-center text-sm text-gray-600">
+                                <div class="min-w-0">
+                                    <p class="truncate">How can i forget about that man!.
+                                    </p>
+                                </div>
+                                <p class="ml-2 whitespace-no-wrap">12 Nov</p>
+                            </div>
+                        </div>
+                        <div class="w-4 h-4 flex flex-shrink-0 hidden md:block group-hover:block">
+                            <img class="rounded-full w-full h-full object-cover" alt="user2"
+                                 src="https://randomuser.me/api/portraits/men/41.jpg"/>
+                        </div>
+                    </div>
+                    <div class="flex justify-between items-center p-3 hover:bg-gray-800 rounded-lg relative">
+                        <div class="w-16 h-16 relative flex flex-shrink-0">
+                            <img class="shadow-md rounded-full w-full h-full object-cover"
+                                 src="https://randomuser.me/api/portraits/men/70.jpg"
+                                 alt="User2"
+                            />
+                        </div>
+                        <div class="flex-auto min-w-0 ml-4 mr-6 hidden md:block group-hover:block">
+                            <p>Johnny Depp</p>
+                            <div class="flex items-center text-sm text-gray-600">
+                                <div class="min-w-0">
+                                    <p class="truncate">Alright! let's catchup tomorrow!.
+                                    </p>
+                                </div>
+                                <p class="ml-2 whitespace-no-wrap">4 Nov</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex justify-between items-center p-3 hover:bg-gray-800 rounded-lg relative">
+                        <div class="w-16 h-16 relative flex flex-shrink-0">
+                            <img class="shadow-md rounded-full w-full h-full object-cover"
+                                 src="https://randomuser.me/api/portraits/men/20.jpg"
+                                 alt="User2"
+                            />
+                            <div class="absolute bg-gray-900 p-1 rounded-full bottom-0 right-0">
+                                <div class="bg-green-500 rounded-full w-3 h-3"></div>
+                            </div>
+                        </div>
+                        <div class="flex-auto min-w-0 ml-4 mr-6 hidden md:block group-hover:block">
+                            <p>Leonardo Dicaprio</p>
+                            <div class="flex items-center text-sm text-gray-600">
+                                <div class="min-w-0">
+                                    <p class="truncate">How can you leave Rose dude. I hate you!
+                                    </p>
+                                </div>
+                                <p class="ml-2 whitespace-no-wrap">26 Oct</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex justify-between items-center p-3 hover:bg-gray-800 rounded-lg relative">
+                        <div class="w-16 h-16 relative flex flex-shrink-0">
+                            <img class="shadow-md rounded-full w-full h-full object-cover"
+                                 src="https://randomuser.me/api/portraits/men/32.jpg"
+                                 alt="User2"
+                            />
+                        </div>
+                        <div class="flex-auto min-w-0 ml-4 mr-6 hidden md:block group-hover:block">
+                            <p>Tom Cruise</p>
+                            <div class="flex items-center text-sm text-gray-600">
+                                <div class="min-w-0">
+                                    <p class="truncate">Happy birthday to you my friend!
+                                    </p>
+                                </div>
+                                <p class="ml-2 whitespace-no-wrap">2 Oct</p>
+                            </div>
+                        </div>
+                        <div class="w-4 h-4 flex flex-shrink-0 hidden md:block group-hover:block">
+                            <img class="rounded-full w-full h-full object-cover" alt="user2"
+                                 src="https://randomuser.me/api/portraits/men/32.jpg"/>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="flex flex-col flex-auto border-l border-gray-800">
+                <div class="chat-header px-6 py-4 flex flex-row flex-none justify-between items-center shadow">
+                    <div class="flex">
+                        <div class="w-12 h-12 mr-4 relative flex flex-shrink-0">
+                            <img class="shadow-md rounded-full w-full h-full object-cover"
+                                 src="data:image/jpeg;base64,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"
+                                 alt=""
+                            />
+                        </div>
+                        <div class="text-sm">
+                            <p class="font-bold">Scarlett Johansson</p>
+                            <p>Active 1h ago</p>
+                        </div>
+                    </div>
+
+                    <div class="flex">
+                        <a href="#" class="block rounded-full hover:bg-gray-700 bg-gray-800 w-10 h-10 p-2">
+                            <svg viewBox="0 0 20 20" class="w-full h-full fill-current text-blue-500">
+                                <path d="M11.1735916,16.8264084 C7.57463481,15.3079672 4.69203285,12.4253652 3.17359164,8.82640836 L5.29408795,6.70591205 C5.68612671,6.31387329 6,5.55641359 6,5.00922203 L6,0.990777969 C6,0.45097518 5.55237094,3.33066907e-16 5.00019251,3.33066907e-16 L1.65110039,3.33066907e-16 L1.00214643,8.96910337e-16 C0.448676237,1.13735153e-15 -1.05725384e-09,0.445916468 -7.33736e-10,1.00108627 C-7.33736e-10,1.00108627 -3.44283713e-14,1.97634814 -3.44283713e-14,3 C-3.44283713e-14,12.3888407 7.61115925,20 17,20 C18.0236519,20 18.9989137,20 18.9989137,20 C19.5517984,20 20,19.5565264 20,18.9978536 L20,18.3488996 L20,14.9998075 C20,14.4476291 19.5490248,14 19.009222,14 L14.990778,14 C14.4435864,14 13.6861267,14.3138733 13.2940879,14.7059121 L11.1735916,16.8264084 Z"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="block rounded-full hover:bg-gray-700 bg-gray-800 w-10 h-10 p-2 ml-4">
+                            <svg viewBox="0 0 20 20" class="w-full h-full fill-current text-blue-500">
+                                <path d="M0,3.99406028 C0,2.8927712 0.894513756,2 1.99406028,2 L14.0059397,2 C15.1072288,2 16,2.89451376 16,3.99406028 L16,16.0059397 C16,17.1072288 15.1054862,18 14.0059397,18 L1.99406028,18 C0.892771196,18 0,17.1054862 0,16.0059397 L0,3.99406028 Z M8,14 C10.209139,14 12,12.209139 12,10 C12,7.790861 10.209139,6 8,6 C5.790861,6 4,7.790861 4,10 C4,12.209139 5.790861,14 8,14 Z M8,12 C9.1045695,12 10,11.1045695 10,10 C10,8.8954305 9.1045695,8 8,8 C6.8954305,8 6,8.8954305 6,10 C6,11.1045695 6.8954305,12 8,12 Z M16,7 L20,3 L20,17 L16,13 L16,7 Z"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="block rounded-full hover:bg-gray-700 bg-gray-800 w-10 h-10 p-2 ml-4">
+                            <svg viewBox="0 0 20 20" class="w-full h-full fill-current text-blue-500">
+                                <path d="M2.92893219,17.0710678 C6.83417511,20.9763107 13.1658249,20.9763107 17.0710678,17.0710678 C20.9763107,13.1658249 20.9763107,6.83417511 17.0710678,2.92893219 C13.1658249,-0.976310729 6.83417511,-0.976310729 2.92893219,2.92893219 C-0.976310729,6.83417511 -0.976310729,13.1658249 2.92893219,17.0710678 Z M9,11 L9,10.5 L9,9 L11,9 L11,15 L9,15 L9,11 Z M9,5 L11,5 L11,7 L9,7 L9,5 Z"/>
+                            </svg>
+
+                        </a>
+                    </div>
+                </div>
+                <div class="chat-body p-4 flex-1 overflow-y-scroll">
+                    <div class="flex flex-row justify-start">
+                        <div class="w-8 h-8 relative flex flex-shrink-0 mr-4">
+                            <img class="shadow-md rounded-full w-full h-full object-cover"
+                                 src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBwgHBgkIBwgKCgkLDRYPDQwMDRsUFRAWIB0iIiAdHx8kKDQsJCYxJx8fLT0tMTU3Ojo6Iys/RD84QzQ5OjcBCgoKDQwNGg8PGjclHyU3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3N//AABEIALoAiwMBIgACEQEDEQH/xAAcAAABBQEBAQAAAAAAAAAAAAAFAQIDBAYHAAj/xAA8EAACAQMDAgQDBgQEBgMAAAABAgMABBEFEiExQQYTUWEiMnEUQoGRocEjM1KxBxVD0RYkNGLh8XKywv/EABoBAAIDAQEAAAAAAAAAAAAAAAMEAQIFAAb/xAAkEQADAAICAgMAAgMAAAAAAAAAAQIDEQQhEjETIkEyUQVhcf/aAAwDAQACEQMRAD8A5+KXFepRRComKSnUlccJXqSR1iQvIwVR3NDZ9VGcW6Z/7m/2qG0idbCgYowYHBBzmiaX1uyBjNH0yRuFYppZZ2/isWz+VFrC0iKZCg/Uda6eT8fpE/B5+y/L4itIzgRTOPUKP3NTWuuWE+B5vlMfuyDH69KDX1kVkYRx4AOPYUNeMcj/ANVM8y9kVx0jertblSCPUU4YrA291cWbBreVkx2HT8q0emeIIbjEV3iKX+on4W/2pvHyZvp9AawufQbxQvUX3T7R0UfrRRjtUt2FAnYs5Y9zU561OiMa72WtOTMrOeiiiNQWKbIAT1bmp6vinUorb2xK9ilr1EKAavY96SvVmDYppjsqKWc4VRkk0+hOszkgQK3w9W96hvSJRSvrpruXP+mvyj96iRQcZ4FMXipEPIxwT0oDewqRfhiUYxwvr1NGtNjdjwf0zVXR9F1C/wANBaylfUCtto/ha9iZfPix9T/saXyWkN48VP8AAXq2mtEu7y/hdFYEKcHishfwAO2EIHvxXa77RXvLGGGRtpiG0H1FZbUfBbks0Th++3ofwoU5kvYW+PT9HLWTB54qNhWo1bwzeWjErHuPdSMMfp2P4VmJl2MVwQR1B4pqLVehK8bn2E9L1aSKP7LM26NuFY9U9vpRSNd7qo5ycVk61PhyX7QuW5MQwf2pvG3TSYta0mw6qhVAHYUvevDpXq0xQ9TSacaSuOAtLXuMV4VmDYjYVSfQVmriTzpnk/qY4rQXp/5Wfn7h/tWfReQwXOeAPU0LIwkLY1Y2ZuhNb/wd4OWXbd6mnB5SE/3NReCfDySypd3S7ol5VT94+v0rpVtDtPA4pDNmfqTS4/HT+1F60gSOMJCiogGAEGKtx25LZ5r1qnSiMaBcY70sp32xurUrSKv2Ukciqz221j8IzRv7tVZFBNWeNA4zVvsz99axyxlJkV4+6sMisL4i8FWl7l7XMUvp1/WumXMYOR70LngycjtVU3D6YWpm12cC1TSLrTZzHcRlT2z0YVY8Ly+VftHn4ZEP5jkfvXS/EtlFewSQzIN234G7qa5fAptdRiP9EgB+nQ1pcbPukzJ5ODw3o2VepMilFbxkHjSUuK9muOAtJS0hrMGynqbf8vsU8scVRt0HmoMd9i/uas6h/PjHYZNR2R3arbR9kINL5fehjEutnVNEISGKNeFRQBxWrgHAIrE6ZcYVQDycfhWqj1ewtQI7m5jWTHy55rMpPZrw+g7DVxc1n4fEWlBgrXage4OPzonFrFlIB5FzG+fRs1aUylPfoJAnbUZUnmmJOHUnI6VRvtXFlHu27h6VbplEmWLhODnrQ+WPnqOaB3XiXUbxylpbeWoP8wjNU3g1ScAy6mFc84Vxx+lUchFeuiHXmAc/jXMNWTy9TcdpOV+tdEvbLVFZmuJIriJRndnDj9jWL1mxMmo2CMdiyTohf03Ec0xhWhbkfZBSLmNfoKkFPuIDa3EtuSCY2K7h0OKaK9HFKpTRhUtNpi0mKcKSrFQJikNO7U2swbIIbCbU9TEEbpGqLuZ5PlUdP3pNQ0a90HxClteoA7YZGU5VlPcGtR/hqIJfEl7BOVPmW4Kq3fDDP6H9KO+KtMSR7WS6QyNbsUglHUJn5fwpLLk1k0aGHEqxbX9lGxsbi4VVhkEWVyWPYe3vUuo3mheGIg14JJrhuditlm/WifhxVmi2vyCAD7ir/wDwNopuRd/YTJPnIYyMdp9hnFLLx8uxmprX1MM/jDS74gR+H5hlgPgY7jn2HWjmkJZ3C+ZaxTRSo2ChByp9COoPsRWoi8Laes3nC0TzdwYOIFUg5znIHXP9qtf8OWYk+1E3KzfedblwW9jz09qtblroHj80+yfQ5Y7mP58gLz65oRqVysd55Dbc4J3McAD3NWLEC2u5FU4VjnApreWuq75kV1I6MM0DYy0/Zkb+bUdVab/KLuHbERs2/EH5Hyg8dO5/AUHTwr4hv3LTX06SkbkAIb+2AK7KI0ZQUOFP9PamG1VsBpHKjjbnH9qPORJdIWrG6e2zDeH9H12yUrq97bXEIVlAiByx9CSOn0oDq2mi7ukhB2lZ1IPp1x+1dM1UpDFtVQoA4A7Vl9Gt47nW5lnA27QQxPfqKhU2wnxpSjO6+sMV7GIXLHyVDg/dYcY/IUPDcVb1+US6vc7TuVHKKc9gf/dUV5r0PGWsUpmDne8tf9JQeKYbiFTgyDIpsrFYnI7ChG7PWpy5fDWikRsdSUtJmkhkoxalJpGuWuoWzkSW8iucdxn4h9CMiu63yQX2hidSDvO5SeeCeD+ua+d77P2l811P/DLXjqGmf5RL/OtEwM87ou35dKU5E7Wxzi3p+LLfhmZo3kjJO5Xxit/Yz5jA9q5wQ1lrUuD8LksDWz0i6Uxgk0lXvZoyk50Hl3HpTLnd5Z3HAqMXyRREgggUMvWmnheV2YseVjB7en4ioZVS9lNGD6g/ljgHmnaijAiZB8nX6UM+3TWl68z2lwISRu+D5fyq3qutC7tlgsIRI7j7vGB6k1XQTyWg1pt7A8SAyFD0weRmiTkBc7hWU0aJo42W62DIHwg5xjvmibXLQptdsr90n0rvXRXx2R65J8BbPFZjSmBvL6XIHlqoDE4xyaI6ndNcKY48k55rMahdLp9hebJE+1lhtU4Jxt64PXn1omNeT0iMr8ZAzyCaaWRflaRiv0ycU4VFAuyFFAxgYxUor1ELUpHmae22K43IV9QRQUjBx6UbFD5rVzKxUcE8ULPLemi2N69lekpaSkw4K1eADEgH1qPQ9Ul0fU4r6Et/D4dQfnU8FaI3UXmwsvtkUAddjMpHQ0OkWl67OqT63Y6nf2Qgwk7QB5YxkhN3IGe/zVo7S3lWINEx2/WuQXMzadqVjKHRitrFko2cjkHPvx0rsPhi+jvLMbWBDLwaz88ePo1ONl8umEIhLErySchcdelUZ/EdhHII/tAdge3rWhtQsi4dQcjDCgk8EGkS3AW0jlSX4grKMg4PTNAhJ+xlt/gsGt2cgyCuD3zmnT3VhErG1CZbksVxn8KM6bqOh3M4BjEMrOW8uSPbnjn8KvTto8StiMSuD5m1Y8nHtx0oyhAvmSf8WYSbVbs4+yWrzDBIwhAx35olpc0uo2DSTQmIhxgFgcj2/KmaxrD3gEEUH2a1G4En5nBPYDpRazCQ2MKgAEgNtHYdhQ7SSCqqfbWigII0jmOOhNco1C6W58aSLuAQqYdzHA5U/uQK6Lr+ppp+hzTM2C25vqK5Losp+2zXsyhgqMzZcjBbjIPtn9KZ4ke6EuZfqTQocqp56U8UyKZbhfNjChW5Cr0X2FSDmvQQ9ymYlLTaFr3PrXjSjOOCPyq5UC5pDSUprMGxKEalblZPMUcGi/eobrAT8ahrolEOsSx31layQ2/lm2jVH+I/ECq4wOg5Vs49faivgPxD/l9ytrcN/DY/Ax7e1A7qKV4ZTlQkMfc4ON68D15YfhmhnQ9x34oFQqXiGm3FeSPpOzuVZldW+GTpim6gguleGXqvIrmvhTxJcW9hF9uJaAnCz9dp9G9K6Ha30N+kUwYblO1zms2pcVo1ovySZXgimt9o8sSop49RVma6Lx+WtnJgf1MxH5HiiMEKeYQxx9KvyWUYiDbzVk3ovWTxa8kZI2LyOJbjAI+WMfvVl5sQTvnB4jj+pohPGi5IPQdayWo3UtzP9itDjBO5/T3qjZDbb2wb4mf/ADCC5Kf9PbwsqD1bFYi5iSODy5cJG8J5x94DK/qAPxrpGp2S22jSRquMrj8K55q21hHHtzgj4t2OPp3rS4PeOkZnOWrllvR9wttjDaVOcY7EAir4qCFQwSTPOzaPTFTCtfEmpSZl203tDuKWm5r2aKVAtepteziswaHVVviRDnGeasZqG7Obd/pXHDJo/tFqpx8vIx79aDSY3n4dvt6UZ05ibf4jmq+oWn+onHrVGi2zQf4fXCSG4spsMp+La3Qg9a08mn3uit9o0zdJbAfFB1Kj29RWB8HyNDqjTL0RMke2RXarDZd2w9xWbyOshqcX7Y+yroXieyugFeQLIvBR+GB+laCXWIDHlpFVR3JAFZi88O2N3Li7tkLjo4GD+Y5r0Xg3SwRut2kH9Lyuw/LOKEmhlzv2LqmvpdM1ppJ8+Un4nXlE+p/arOh6WsSF5ASScsT3NXrbSYbWNY4IFRF6BFAAojHB5cXHAFUZZAHX0DWjj2xXMNa0S4nMc1ryw4aPOOfWuqasNw2epoDfRRwjc/A6cdfw96JgzVjf1B8jDORdmSjimgiRJkKsvBz0yPQ9DTx9f/NX4Y9y3M6AoyKDHF5W/IPzZGMZqdtGgjiSSSWSL4Dwo7nnBB64PFa0f5NerRjXw/2WCqTNWn0+VJPLWVJSBktgLjvnBPHf8veoWt5VYqY3JBx8IyPzp3HysV+mL1gyT+ACvZpM17NKhBc02VfMjK5IzXs17NccQWyvA+zaWU9GqeQblI9a9nPeiGnabJdkO4Ii/ImqXShbZeZq3pCeBdPd7y5eRD5bRlB7810XwjcFQYJT8cbbTmqugaaIFZguOO1N2tY6oJ1GFc8+lZOXJ51s18MfHOjdPCrgMAKdEoxyBTLCZZ7cEelSHK9qGGH4HpXn4QmmZNRXk6QWzvIwVQOpqCQNeEGcsThVHWs9qEy3U6oBhB8rBGyW7duOD1+nsat3d2Z71VYlYGU4wD19Sfzx9KoXEiw8F8fxMZAO4e/6d+OlQgGS99IZMCtsWVPmxtJbiM5BBB7cnPHXPWrMqSvLbukCQ+T5mCD6gZx9TtOe3XnGKj2qtpOjsrsQMDaAqkAfn0qO5YrE6200iEkHduyckgN7jjt9alL8AMVXmiLPcTbJA6xuzIFwSdoz1/GvDzoN0Zckhic7/U57/WvMJ3kjhj2eRJEAWIySc+nsKkYyqceay+28/sa57RfHTRzo8cd6bmrV3A7ygxIWZuyjPNF9M8H6hd4eZkt0Pry1bua5xP7MzMWO8v8AFGezxTokeWRUjUsx6Ad620XgJc/xbqRvYACj2l+FILX+SCnHLDlj+NKXzYS+o1HByN/boyej+Fm2+fqHPcR9h9aPWluhYBRhe1HrnTFht2wzdMcmgtujedsQ4A6n3pGstZHujRjFONaSDsAREwCOlVrq2WZCO45BqaK0XqzMTUksGANpoQQfoMzQv5EnINaABW4PFBdKtCH3nrV+/uo7K3aaU8DoO59hVkVrQ+8uYbOB5pGwqDr+1Y6+12a+kCwxMsBjOMggnjn/AOQ5HQevNV7nU21aVZhcblVyECtgKcdPfrVV5SGcqMkNlR3wMAD3GQa7/QteTfSJsR3Mw6eX8oUcYIPzDPsO471GVjXCE4LsoVskt1/qPfA96jgULsIn2IHGSctjJwD0+vH0p95O77oLY4yyFskkYGMEdOvoe1T4tAtj5YAypwWOMAgnGST78Htn2qCdID5okCxuW5UJuxzjkDr16cU93dvlk8pYdrb+cA8kAEe4/Wq7Sxm0ZZo8CdvnjQHHPYjkAY5+lSk/04dZm3RZGVTuUBwpyATuwc88fF2q2kbFeSScnJTIGc/WoZLjYViLj+ImQWXAGflxxkdenH4U8W+4ZD8dPid8/ocVS0XQQ0XQFt1DFfjI5NaGO22gDAqW3+VatJVap290x6ZULSRBHD7CrIVUXJ4py9aZd/yWqCN7YE1eVpCETJHeqltbCPtVs/MacvSplnUPU8c0qnLfjUXepoqsjiW51GDTbUyTNjsqjq59APWsHq+sTajeOJJDsKghFHGMZ2k9+f7Gi/iAb9TtFf4l+0qMHkfKTWTj/wCpA/7l/wDqaIl0K3Tpl+xU4lLKJItp/hsrMCc42kcjp6jjHtUpvHkV2PDgltwwcZzwMdOvQU60JXTLdlOCJBgj6Cp44o9+nHy0y8/xfD83PerP0AT7GIziRo5Wxks+Pvep59PmP5VSlf8Agq6nkg7fO6Arzxn1zRC1VTrMYKjHmsuMfd+Hj6c0tvHGDGwRcqz7Tjp83+wrif7IpJYpESMtv34SPy2IwxHH0Ge5pk0sPlFEkTdFhBIp5XryPbOasPGgbaEUDf0x9KSInbJz/r4/Co/dHfmyGaJHIgORDFJuEvxKhByvB+ufXrTRqCwDyoUkKLwDvI//AFVpzjT7dR8oRQB27VSvZZEupFV2VRjAB6cUNVt+gjnSP//Z"
+                                 alt=""
+                            />
+                        </div>
+                        <div class="messages text-sm text-gray-700 grid grid-flow-row gap-2">
+                            <div class="flex items-center group">
+                                <p class="px-6 py-3 rounded-t-full rounded-r-full bg-gray-800 max-w-xs lg:max-w-md text-gray-200">Hey! How are you?</p>
+                                <button type="button" class="hidden group-hover:block flex flex-shrink-0 focus:outline-none mx-2 block rounded-full text-gray-500 hover:text-gray-900 hover:bg-gray-700 bg-gray-800 w-8 h-8 p-2">
+                                    <svg viewBox="0 0 20 20" class="w-full h-full fill-current">
+                                        <path d="M10.001,7.8C8.786,7.8,7.8,8.785,7.8,10s0.986,2.2,2.201,2.2S12.2,11.215,12.2,10S11.216,7.8,10.001,7.8z
+ M3.001,7.8C1.786,7.8,0.8,8.785,0.8,10s0.986,2.2,2.201,2.2S5.2,11.214,5.2,10S4.216,7.8,3.001,7.8z M17.001,7.8
+C15.786,7.8,14.8,8.785,14.8,10s0.986,2.2,2.201,2.2S19.2,11.215,19.2,10S18.216,7.8,17.001,7.8z"/>
+                                    </svg>
+                                </button>
+                                <button type="button" class="hidden group-hover:block flex flex-shrink-0 focus:outline-none mx-2 block rounded-full text-gray-500 hover:text-gray-900 hover:bg-gray-700 bg-gray-800 w-8 h-8 p-2">
+                                    <svg viewBox="0 0 20 20" class="w-full h-full fill-current">
+                                        <path d="M19,16.685c0,0-2.225-9.732-11-9.732V2.969L1,9.542l7,6.69v-4.357C12.763,11.874,16.516,12.296,19,16.685z"/>
+                                    </svg>
+                                </button>
+                                <button type="button" class="hidden group-hover:block flex flex-shrink-0 focus:outline-none mx-2 block rounded-full text-gray-500 hover:text-gray-900 hover:bg-gray-700 bg-gray-800 w-8 h-8 p-2">
+                                    <svg viewBox="0 0 24 24" class="w-full h-full fill-current">
+                                        <path
+                                                d="M12 22a10 10 0 1 1 0-20 10 10 0 0 1 0 20zm0-2a8 8 0 1 0 0-16 8 8 0 0 0 0 16zm-3.54-4.46a1 1 0 0 1 1.42-1.42 3 3 0 0 0 4.24 0 1 1 0 0 1 1.42 1.42 5 5 0 0 1-7.08 0zM9 11a1 1 0 1 1 0-2 1 1 0 0 1 0 2zm6 0a1 1 0 1 1 0-2 1 1 0 0 1 0 2z"/>
+                                    </svg>
+                                </button>
+                            </div>
+                            <div class="flex items-center group">
+                                <p class="px-6 py-3 rounded-r-full bg-gray-800 max-w-xs lg:max-w-md text-gray-200">Shall we go for Hiking this weekend?</p>
+                                <button type="button" class="hidden group-hover:block flex flex-shrink-0 focus:outline-none mx-2 block rounded-full text-gray-500 hover:text-gray-900 hover:bg-gray-700 bg-gray-800 w-8 h-8 p-2">
+                                    <svg viewBox="0 0 20 20" class="w-full h-full fill-current">
+                                        <path d="M10.001,7.8C8.786,7.8,7.8,8.785,7.8,10s0.986,2.2,2.201,2.2S12.2,11.215,12.2,10S11.216,7.8,10.001,7.8z
+ M3.001,7.8C1.786,7.8,0.8,8.785,0.8,10s0.986,2.2,2.201,2.2S5.2,11.214,5.2,10S4.216,7.8,3.001,7.8z M17.001,7.8
+C15.786,7.8,14.8,8.785,14.8,10s0.986,2.2,2.201,2.2S19.2,11.215,19.2,10S18.216,7.8,17.001,7.8z"/>
+                                    </svg>
+                                </button>
+                                <button type="button" class="hidden group-hover:block flex flex-shrink-0 focus:outline-none mx-2 block rounded-full text-gray-500 hover:text-gray-900 hover:bg-gray-700 bg-gray-800 w-8 h-8 p-2">
+                                    <svg viewBox="0 0 20 20" class="w-full h-full fill-current">
+                                        <path d="M19,16.685c0,0-2.225-9.732-11-9.732V2.969L1,9.542l7,6.69v-4.357C12.763,11.874,16.516,12.296,19,16.685z"/>
+                                    </svg>
+                                </button>
+                                <button type="button" class="hidden group-hover:block flex flex-shrink-0 focus:outline-none mx-2 block rounded-full text-gray-500 hover:text-gray-900 hover:bg-gray-700 bg-gray-800 w-8 h-8 p-2">
+                                    <svg viewBox="0 0 24 24" class="w-full h-full fill-current">
+                                        <path
+                                                d="M12 22a10 10 0 1 1 0-20 10 10 0 0 1 0 20zm0-2a8 8 0 1 0 0-16 8 8 0 0 0 0 16zm-3.54-4.46a1 1 0 0 1 1.42-1.42 3 3 0 0 0 4.24 0 1 1 0 0 1 1.42 1.42 5 5 0 0 1-7.08 0zM9 11a1 1 0 1 1 0-2 1 1 0 0 1 0 2zm6 0a1 1 0 1 1 0-2 1 1 0 0 1 0 2z"/>
+                                    </svg>
+                                </button>
+                            </div>
+                            <div class="flex items-center group">
+                                <p class="px-6 py-3 rounded-b-full rounded-r-full bg-gray-800 max-w-xs lg:max-w-md text-gray-200">Lorem ipsum
+                                    dolor sit
+                                    amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+                                    dolore magna aliqua. Volutpat lacus laoreet non curabitur gravida.</p>
+                                <button type="button" class="hidden group-hover:block flex flex-shrink-0 focus:outline-none mx-2 block rounded-full text-gray-500 hover:text-gray-900 hover:bg-gray-700 bg-gray-800 w-8 h-8 p-2">
+                                    <svg viewBox="0 0 20 20" class="w-full h-full fill-current">
+                                        <path d="M10.001,7.8C8.786,7.8,7.8,8.785,7.8,10s0.986,2.2,2.201,2.2S12.2,11.215,12.2,10S11.216,7.8,10.001,7.8z
+ M3.001,7.8C1.786,7.8,0.8,8.785,0.8,10s0.986,2.2,2.201,2.2S5.2,11.214,5.2,10S4.216,7.8,3.001,7.8z M17.001,7.8
+C15.786,7.8,14.8,8.785,14.8,10s0.986,2.2,2.201,2.2S19.2,11.215,19.2,10S18.216,7.8,17.001,7.8z"/>
+                                    </svg>
+                                </button>
+                                <button type="button" class="hidden group-hover:block flex flex-shrink-0 focus:outline-none mx-2 block rounded-full text-gray-500 hover:text-gray-900 hover:bg-gray-700 bg-gray-800 w-8 h-8 p-2">
+                                    <svg viewBox="0 0 20 20" class="w-full h-full fill-current">
+                                        <path d="M19,16.685c0,0-2.225-9.732-11-9.732V2.969L1,9.542l7,6.69v-4.357C12.763,11.874,16.516,12.296,19,16.685z"/>
+                                    </svg>
+                                </button>
+                                <button type="button" class="hidden group-hover:block flex flex-shrink-0 focus:outline-none mx-2 block rounded-full text-gray-500 hover:text-gray-900 hover:bg-gray-700 bg-gray-800 w-8 h-8 p-2">
+                                    <svg viewBox="0 0 24 24" class="w-full h-full fill-current">
+                                        <path
+                                                d="M12 22a10 10 0 1 1 0-20 10 10 0 0 1 0 20zm0-2a8 8 0 1 0 0-16 8 8 0 0 0 0 16zm-3.54-4.46a1 1 0 0 1 1.42-1.42 3 3 0 0 0 4.24 0 1 1 0 0 1 1.42 1.42 5 5 0 0 1-7.08 0zM9 11a1 1 0 1 1 0-2 1 1 0 0 1 0 2zm6 0a1 1 0 1 1 0-2 1 1 0 0 1 0 2z"/>
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="p-4 text-center text-sm text-gray-500">FRI 3:04 PM</p>
+                    <div class="flex flex-row justify-end">
+                        <div class="messages text-sm text-white grid grid-flow-row gap-2">
+                            <div class="flex items-center flex-row-reverse group">
+                                <p class="px-6 py-3 rounded-t-full rounded-l-full bg-blue-700 max-w-xs lg:max-w-md">Hey! How are you?</p>
+                                <button type="button" class="hidden group-hover:block flex flex-shrink-0 focus:outline-none mx-2 block rounded-full text-gray-500 hover:text-gray-900 hover:bg-gray-700 bg-gray-800 w-8 h-8 p-2">
+                                    <svg viewBox="0 0 20 20" class="w-full h-full fill-current">
+                                        <path d="M10.001,7.8C8.786,7.8,7.8,8.785,7.8,10s0.986,2.2,2.201,2.2S12.2,11.215,12.2,10S11.216,7.8,10.001,7.8z
+	 M3.001,7.8C1.786,7.8,0.8,8.785,0.8,10s0.986,2.2,2.201,2.2S5.2,11.214,5.2,10S4.216,7.8,3.001,7.8z M17.001,7.8
+	C15.786,7.8,14.8,8.785,14.8,10s0.986,2.2,2.201,2.2S19.2,11.215,19.2,10S18.216,7.8,17.001,7.8z"/>
+                                    </svg>
+                                </button>
+                                <button type="button" class="hidden group-hover:block flex flex-shrink-0 focus:outline-none mx-2 block rounded-full text-gray-500 hover:text-gray-900 hover:bg-gray-700 bg-gray-800 w-8 h-8 p-2">
+                                    <svg viewBox="0 0 20 20" class="w-full h-full fill-current">
+                                        <path d="M19,16.685c0,0-2.225-9.732-11-9.732V2.969L1,9.542l7,6.69v-4.357C12.763,11.874,16.516,12.296,19,16.685z"/>
+                                    </svg>
+                                </button>
+                                <button type="button" class="hidden group-hover:block flex flex-shrink-0 focus:outline-none mx-2 block rounded-full text-gray-500 hover:text-gray-900 hover:bg-gray-700 bg-gray-800 w-8 h-8 p-2">
+                                    <svg viewBox="0 0 24 24" class="w-full h-full fill-current">
+                                        <path
+                                                d="M12 22a10 10 0 1 1 0-20 10 10 0 0 1 0 20zm0-2a8 8 0 1 0 0-16 8 8 0 0 0 0 16zm-3.54-4.46a1 1 0 0 1 1.42-1.42 3 3 0 0 0 4.24 0 1 1 0 0 1 1.42 1.42 5 5 0 0 1-7.08 0zM9 11a1 1 0 1 1 0-2 1 1 0 0 1 0 2zm6 0a1 1 0 1 1 0-2 1 1 0 0 1 0 2z"/>
+                                    </svg>
+                                </button>
+                            </div>
+                            <div class="flex items-center flex-row-reverse group">
+                                <p class="px-6 py-3 rounded-l-full bg-blue-700 max-w-xs lg:max-w-md">Shall we go for Hiking this weekend?</p>
+                                <button type="button" class="hidden group-hover:block flex flex-shrink-0 focus:outline-none mx-2 block rounded-full text-gray-500 hover:text-gray-900 hover:bg-gray-700 bg-gray-800 w-8 h-8 p-2">
+                                    <svg viewBox="0 0 20 20" class="w-full h-full fill-current">
+                                        <path d="M10.001,7.8C8.786,7.8,7.8,8.785,7.8,10s0.986,2.2,2.201,2.2S12.2,11.215,12.2,10S11.216,7.8,10.001,7.8z
+	 M3.001,7.8C1.786,7.8,0.8,8.785,0.8,10s0.986,2.2,2.201,2.2S5.2,11.214,5.2,10S4.216,7.8,3.001,7.8z M17.001,7.8
+	C15.786,7.8,14.8,8.785,14.8,10s0.986,2.2,2.201,2.2S19.2,11.215,19.2,10S18.216,7.8,17.001,7.8z"/>
+                                    </svg>
+                                </button>
+                                <button type="button" class="hidden group-hover:block flex flex-shrink-0 focus:outline-none mx-2 block rounded-full text-gray-500 hover:text-gray-900 hover:bg-gray-700 bg-gray-800 w-8 h-8 p-2">
+                                    <svg viewBox="0 0 20 20" class="w-full h-full fill-current">
+                                        <path d="M19,16.685c0,0-2.225-9.732-11-9.732V2.969L1,9.542l7,6.69v-4.357C12.763,11.874,16.516,12.296,19,16.685z"/>
+                                    </svg>
+                                </button>
+                                <button type="button" class="hidden group-hover:block flex flex-shrink-0 focus:outline-none mx-2 block rounded-full text-gray-500 hover:text-gray-900 hover:bg-gray-700 bg-gray-800 w-8 h-8 p-2">
+                                    <svg viewBox="0 0 24 24" class="w-full h-full fill-current">
+                                        <path
+                                                d="M12 22a10 10 0 1 1 0-20 10 10 0 0 1 0 20zm0-2a8 8 0 1 0 0-16 8 8 0 0 0 0 16zm-3.54-4.46a1 1 0 0 1 1.42-1.42 3 3 0 0 0 4.24 0 1 1 0 0 1 1.42 1.42 5 5 0 0 1-7.08 0zM9 11a1 1 0 1 1 0-2 1 1 0 0 1 0 2zm6 0a1 1 0 1 1 0-2 1 1 0 0 1 0 2z"/>
+                                    </svg>
+                                </button>
+                            </div>
+                            <div class="flex items-center flex-row-reverse group">
+                                <p class="px-6 py-3 rounded-b-full rounded-l-full bg-blue-700 max-w-xs lg:max-w-md">Lorem ipsum
+                                    dolor sit
+                                    amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+                                    dolore magna aliqua. Volutpat lacus laoreet non curabitur gravida.</p>
+                                <button type="button" class="hidden group-hover:block flex flex-shrink-0 focus:outline-none mx-2 block rounded-full text-gray-500 hover:text-gray-900 hover:bg-gray-700 bg-gray-800 w-8 h-8 p-2">
+                                    <svg viewBox="0 0 20 20" class="w-full h-full fill-current">
+                                        <path d="M10.001,7.8C8.786,7.8,7.8,8.785,7.8,10s0.986,2.2,2.201,2.2S12.2,11.215,12.2,10S11.216,7.8,10.001,7.8z
+	 M3.001,7.8C1.786,7.8,0.8,8.785,0.8,10s0.986,2.2,2.201,2.2S5.2,11.214,5.2,10S4.216,7.8,3.001,7.8z M17.001,7.8
+	C15.786,7.8,14.8,8.785,14.8,10s0.986,2.2,2.201,2.2S19.2,11.215,19.2,10S18.216,7.8,17.001,7.8z"/>
+                                    </svg>
+                                </button>
+                                <button type="button" class="hidden group-hover:block flex flex-shrink-0 focus:outline-none mx-2 block rounded-full text-gray-500 hover:text-gray-900 hover:bg-gray-700 bg-gray-800 w-8 h-8 p-2">
+                                    <svg viewBox="0 0 20 20" class="w-full h-full fill-current">
+                                        <path d="M19,16.685c0,0-2.225-9.732-11-9.732V2.969L1,9.542l7,6.69v-4.357C12.763,11.874,16.516,12.296,19,16.685z"/>
+                                    </svg>
+                                </button>
+                                <button type="button" class="hidden group-hover:block flex flex-shrink-0 focus:outline-none mx-2 block rounded-full text-gray-500 hover:text-gray-900 hover:bg-gray-700 bg-gray-800 w-8 h-8 p-2">
+                                    <svg viewBox="0 0 24 24" class="w-full h-full fill-current">
+                                        <path
+                                                d="M12 22a10 10 0 1 1 0-20 10 10 0 0 1 0 20zm0-2a8 8 0 1 0 0-16 8 8 0 0 0 0 16zm-3.54-4.46a1 1 0 0 1 1.42-1.42 3 3 0 0 0 4.24 0 1 1 0 0 1 1.42 1.42 5 5 0 0 1-7.08 0zM9 11a1 1 0 1 1 0-2 1 1 0 0 1 0 2zm6 0a1 1 0 1 1 0-2 1 1 0 0 1 0 2z"/>
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="p-4 text-center text-sm text-gray-500">SAT 2:10 PM</p>
+                    <div class="flex flex-row justify-start">
+                        <div class="w-8 h-8 relative flex flex-shrink-0 mr-4">
+                            <img class="shadow-md rounded-full w-full h-full object-cover"
+                                 src="https://randomuser.me/api/portraits/women/33.jpg"
+                                 alt=""
+                            />
+                        </div>
+                        <div class="messages text-sm text-gray-700 grid grid-flow-row gap-2">
+                            <div class="flex items-center group">
+                                <p class="px-6 py-3 rounded-t-full rounded-r-full bg-gray-800 max-w-xs lg:max-w-md text-gray-200">Hey! How are you?</p>
+                                <button type="button" class="hidden group-hover:block flex flex-shrink-0 focus:outline-none mx-2 block rounded-full text-gray-500 hover:text-gray-900 hover:bg-gray-700 bg-gray-800 w-8 h-8 p-2">
+                                    <svg viewBox="0 0 20 20" class="w-full h-full fill-current">
+                                        <path d="M10.001,7.8C8.786,7.8,7.8,8.785,7.8,10s0.986,2.2,2.201,2.2S12.2,11.215,12.2,10S11.216,7.8,10.001,7.8z
+ M3.001,7.8C1.786,7.8,0.8,8.785,0.8,10s0.986,2.2,2.201,2.2S5.2,11.214,5.2,10S4.216,7.8,3.001,7.8z M17.001,7.8
+C15.786,7.8,14.8,8.785,14.8,10s0.986,2.2,2.201,2.2S19.2,11.215,19.2,10S18.216,7.8,17.001,7.8z"/>
+                                    </svg>
+                                </button>
+                                <button type="button" class="hidden group-hover:block flex flex-shrink-0 focus:outline-none mx-2 block rounded-full text-gray-500 hover:text-gray-900 hover:bg-gray-700 bg-gray-800 w-8 h-8 p-2">
+                                    <svg viewBox="0 0 20 20" class="w-full h-full fill-current">
+                                        <path d="M19,16.685c0,0-2.225-9.732-11-9.732V2.969L1,9.542l7,6.69v-4.357C12.763,11.874,16.516,12.296,19,16.685z"/>
+                                    </svg>
+                                </button>
+                                <button type="button" class="hidden group-hover:block flex flex-shrink-0 focus:outline-none mx-2 block rounded-full text-gray-500 hover:text-gray-900 hover:bg-gray-700 bg-gray-800 w-8 h-8 p-2">
+                                    <svg viewBox="0 0 24 24" class="w-full h-full fill-current">
+                                        <path
+                                                d="M12 22a10 10 0 1 1 0-20 10 10 0 0 1 0 20zm0-2a8 8 0 1 0 0-16 8 8 0 0 0 0 16zm-3.54-4.46a1 1 0 0 1 1.42-1.42 3 3 0 0 0 4.24 0 1 1 0 0 1 1.42 1.42 5 5 0 0 1-7.08 0zM9 11a1 1 0 1 1 0-2 1 1 0 0 1 0 2zm6 0a1 1 0 1 1 0-2 1 1 0 0 1 0 2z"/>
+                                    </svg>
+                                </button>
+                            </div>
+                            <div class="flex items-center group">
+                                <p class="px-6 py-3 rounded-r-full bg-gray-800 max-w-xs lg:max-w-md text-gray-200">Shall we go for Hiking this weekend?</p>
+                                <button type="button" class="hidden group-hover:block flex flex-shrink-0 focus:outline-none mx-2 block rounded-full text-gray-500 hover:text-gray-900 hover:bg-gray-700 bg-gray-800 w-8 h-8 p-2">
+                                    <svg viewBox="0 0 20 20" class="w-full h-full fill-current">
+                                        <path d="M10.001,7.8C8.786,7.8,7.8,8.785,7.8,10s0.986,2.2,2.201,2.2S12.2,11.215,12.2,10S11.216,7.8,10.001,7.8z
+ M3.001,7.8C1.786,7.8,0.8,8.785,0.8,10s0.986,2.2,2.201,2.2S5.2,11.214,5.2,10S4.216,7.8,3.001,7.8z M17.001,7.8
+C15.786,7.8,14.8,8.785,14.8,10s0.986,2.2,2.201,2.2S19.2,11.215,19.2,10S18.216,7.8,17.001,7.8z"/>
+                                    </svg>
+                                </button>
+                                <button type="button" class="hidden group-hover:block flex flex-shrink-0 focus:outline-none mx-2 block rounded-full text-gray-500 hover:text-gray-900 hover:bg-gray-700 bg-gray-800 w-8 h-8 p-2">
+                                    <svg viewBox="0 0 20 20" class="w-full h-full fill-current">
+                                        <path d="M19,16.685c0,0-2.225-9.732-11-9.732V2.969L1,9.542l7,6.69v-4.357C12.763,11.874,16.516,12.296,19,16.685z"/>
+                                    </svg>
+                                </button>
+                                <button type="button" class="hidden group-hover:block flex flex-shrink-0 focus:outline-none mx-2 block rounded-full text-gray-500 hover:text-gray-900 hover:bg-gray-700 bg-gray-800 w-8 h-8 p-2">
+                                    <svg viewBox="0 0 24 24" class="w-full h-full fill-current">
+                                        <path
+                                                d="M12 22a10 10 0 1 1 0-20 10 10 0 0 1 0 20zm0-2a8 8 0 1 0 0-16 8 8 0 0 0 0 16zm-3.54-4.46a1 1 0 0 1 1.42-1.42 3 3 0 0 0 4.24 0 1 1 0 0 1 1.42 1.42 5 5 0 0 1-7.08 0zM9 11a1 1 0 1 1 0-2 1 1 0 0 1 0 2zm6 0a1 1 0 1 1 0-2 1 1 0 0 1 0 2z"/>
+                                    </svg>
+                                </button>
+                            </div>
+                            <div class="flex items-center group">
+                                <p class="px-6 py-3 rounded-b-full rounded-r-full bg-gray-800 max-w-xs lg:max-w-md text-gray-200">Lorem ipsum
+                                    dolor sit
+                                    amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+                                    dolore magna aliqua. Volutpat lacus laoreet non curabitur gravida.</p>
+                                <button type="button" class="hidden group-hover:block flex flex-shrink-0 focus:outline-none mx-2 block rounded-full text-gray-500 hover:text-gray-900 hover:bg-gray-700 bg-gray-800 w-8 h-8 p-2">
+                                    <svg viewBox="0 0 20 20" class="w-full h-full fill-current">
+                                        <path d="M10.001,7.8C8.786,7.8,7.8,8.785,7.8,10s0.986,2.2,2.201,2.2S12.2,11.215,12.2,10S11.216,7.8,10.001,7.8z
+ M3.001,7.8C1.786,7.8,0.8,8.785,0.8,10s0.986,2.2,2.201,2.2S5.2,11.214,5.2,10S4.216,7.8,3.001,7.8z M17.001,7.8
+C15.786,7.8,14.8,8.785,14.8,10s0.986,2.2,2.201,2.2S19.2,11.215,19.2,10S18.216,7.8,17.001,7.8z"/>
+                                    </svg>
+                                </button>
+                                <button type="button" class="hidden group-hover:block flex flex-shrink-0 focus:outline-none mx-2 block rounded-full text-gray-500 hover:text-gray-900 hover:bg-gray-700 bg-gray-800 w-8 h-8 p-2">
+                                    <svg viewBox="0 0 20 20" class="w-full h-full fill-current">
+                                        <path d="M19,16.685c0,0-2.225-9.732-11-9.732V2.969L1,9.542l7,6.69v-4.357C12.763,11.874,16.516,12.296,19,16.685z"/>
+                                    </svg>
+                                </button>
+                                <button type="button" class="hidden group-hover:block flex flex-shrink-0 focus:outline-none mx-2 block rounded-full text-gray-500 hover:text-gray-900 hover:bg-gray-700 bg-gray-800 w-8 h-8 p-2">
+                                    <svg viewBox="0 0 24 24" class="w-full h-full fill-current">
+                                        <path
+                                                d="M12 22a10 10 0 1 1 0-20 10 10 0 0 1 0 20zm0-2a8 8 0 1 0 0-16 8 8 0 0 0 0 16zm-3.54-4.46a1 1 0 0 1 1.42-1.42 3 3 0 0 0 4.24 0 1 1 0 0 1 1.42 1.42 5 5 0 0 1-7.08 0zM9 11a1 1 0 1 1 0-2 1 1 0 0 1 0 2zm6 0a1 1 0 1 1 0-2 1 1 0 0 1 0 2z"/>
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="p-4 text-center text-sm text-gray-500">12:40 PM</p>
+                    <div class="flex flex-row justify-end">
+                        <div class="messages text-sm text-white grid grid-flow-row gap-2">
+                            <div class="flex items-center flex-row-reverse group">
+                                <p class="px-6 py-3 rounded-t-full rounded-l-full bg-blue-700 max-w-xs lg:max-w-md">Hey! How are you?</p>
+                                <button type="button" class="hidden group-hover:block flex flex-shrink-0 focus:outline-none mx-2 block rounded-full text-gray-500 hover:text-gray-900 hover:bg-gray-700 bg-gray-800 w-8 h-8 p-2">
+                                    <svg viewBox="0 0 20 20" class="w-full h-full fill-current">
+                                        <path d="M10.001,7.8C8.786,7.8,7.8,8.785,7.8,10s0.986,2.2,2.201,2.2S12.2,11.215,12.2,10S11.216,7.8,10.001,7.8z
+	 M3.001,7.8C1.786,7.8,0.8,8.785,0.8,10s0.986,2.2,2.201,2.2S5.2,11.214,5.2,10S4.216,7.8,3.001,7.8z M17.001,7.8
+	C15.786,7.8,14.8,8.785,14.8,10s0.986,2.2,2.201,2.2S19.2,11.215,19.2,10S18.216,7.8,17.001,7.8z"/>
+                                    </svg>
+                                </button>
+                                <button type="button" class="hidden group-hover:block flex flex-shrink-0 focus:outline-none mx-2 block rounded-full text-gray-500 hover:text-gray-900 hover:bg-gray-700 bg-gray-800 w-8 h-8 p-2">
+                                    <svg viewBox="0 0 20 20" class="w-full h-full fill-current">
+                                        <path d="M19,16.685c0,0-2.225-9.732-11-9.732V2.969L1,9.542l7,6.69v-4.357C12.763,11.874,16.516,12.296,19,16.685z"/>
+                                    </svg>
+                                </button>
+                                <button type="button" class="hidden group-hover:block flex flex-shrink-0 focus:outline-none mx-2 block rounded-full text-gray-500 hover:text-gray-900 hover:bg-gray-700 bg-gray-800 w-8 h-8 p-2">
+                                    <svg viewBox="0 0 24 24" class="w-full h-full fill-current">
+                                        <path
+                                                d="M12 22a10 10 0 1 1 0-20 10 10 0 0 1 0 20zm0-2a8 8 0 1 0 0-16 8 8 0 0 0 0 16zm-3.54-4.46a1 1 0 0 1 1.42-1.42 3 3 0 0 0 4.24 0 1 1 0 0 1 1.42 1.42 5 5 0 0 1-7.08 0zM9 11a1 1 0 1 1 0-2 1 1 0 0 1 0 2zm6 0a1 1 0 1 1 0-2 1 1 0 0 1 0 2z"/>
+                                    </svg>
+                                </button>
+                            </div>
+                            <div class="flex items-center flex-row-reverse group">
+                                <p class="px-6 py-3 rounded-l-full bg-blue-700 max-w-xs lg:max-w-md">Shall we go for Hiking this weekend?</p>
+                                <button type="button" class="hidden group-hover:block flex flex-shrink-0 focus:outline-none mx-2 block rounded-full text-gray-500 hover:text-gray-900 hover:bg-gray-700 bg-gray-800 w-8 h-8 p-2">
+                                    <svg viewBox="0 0 20 20" class="w-full h-full fill-current">
+                                        <path d="M10.001,7.8C8.786,7.8,7.8,8.785,7.8,10s0.986,2.2,2.201,2.2S12.2,11.215,12.2,10S11.216,7.8,10.001,7.8z
+	 M3.001,7.8C1.786,7.8,0.8,8.785,0.8,10s0.986,2.2,2.201,2.2S5.2,11.214,5.2,10S4.216,7.8,3.001,7.8z M17.001,7.8
+	C15.786,7.8,14.8,8.785,14.8,10s0.986,2.2,2.201,2.2S19.2,11.215,19.2,10S18.216,7.8,17.001,7.8z"/>
+                                    </svg>
+                                </button>
+                                <button type="button" class="hidden group-hover:block flex flex-shrink-0 focus:outline-none mx-2 block rounded-full text-gray-500 hover:text-gray-900 hover:bg-gray-700 bg-gray-800 w-8 h-8 p-2">
+                                    <svg viewBox="0 0 20 20" class="w-full h-full fill-current">
+                                        <path d="M19,16.685c0,0-2.225-9.732-11-9.732V2.969L1,9.542l7,6.69v-4.357C12.763,11.874,16.516,12.296,19,16.685z"/>
+                                    </svg>
+                                </button>
+                                <button type="button" class="hidden group-hover:block flex flex-shrink-0 focus:outline-none mx-2 block rounded-full text-gray-500 hover:text-gray-900 hover:bg-gray-700 bg-gray-800 w-8 h-8 p-2">
+                                    <svg viewBox="0 0 24 24" class="w-full h-full fill-current">
+                                        <path
+                                                d="M12 22a10 10 0 1 1 0-20 10 10 0 0 1 0 20zm0-2a8 8 0 1 0 0-16 8 8 0 0 0 0 16zm-3.54-4.46a1 1 0 0 1 1.42-1.42 3 3 0 0 0 4.24 0 1 1 0 0 1 1.42 1.42 5 5 0 0 1-7.08 0zM9 11a1 1 0 1 1 0-2 1 1 0 0 1 0 2zm6 0a1 1 0 1 1 0-2 1 1 0 0 1 0 2z"/>
+                                    </svg>
+                                </button>
+                            </div>
+                            <div class="flex items-center flex-row-reverse group">
+                                <a class="block w-64 h-64 relative flex flex-shrink-0 max-w-xs lg:max-w-md" href="#">
+                                    <img class="absolute shadow-md w-full h-full rounded-l-lg object-cover" src="https://unsplash.com/photos/8--kuxbxuKU/download?force=true&w=640" alt="hiking"/>
+                                </a>
+                                <button type="button" class="hidden group-hover:block flex flex-shrink-0 focus:outline-none mx-2 block rounded-full text-gray-500 hover:text-gray-900 hover:bg-gray-700 bg-gray-800 w-8 h-8 p-2">
+                                    <svg viewBox="0 0 20 20" class="w-full h-full fill-current">
+                                        <path d="M10.001,7.8C8.786,7.8,7.8,8.785,7.8,10s0.986,2.2,2.201,2.2S12.2,11.215,12.2,10S11.216,7.8,10.001,7.8z
+	 M3.001,7.8C1.786,7.8,0.8,8.785,0.8,10s0.986,2.2,2.201,2.2S5.2,11.214,5.2,10S4.216,7.8,3.001,7.8z M17.001,7.8
+	C15.786,7.8,14.8,8.785,14.8,10s0.986,2.2,2.201,2.2S19.2,11.215,19.2,10S18.216,7.8,17.001,7.8z"/>
+                                    </svg>
+                                </button>
+                                <button type="button" class="hidden group-hover:block flex flex-shrink-0 focus:outline-none mx-2 block rounded-full text-gray-500 hover:text-gray-900 hover:bg-gray-700 bg-gray-800 w-8 h-8 p-2">
+                                    <svg viewBox="0 0 20 20" class="w-full h-full fill-current">
+                                        <path d="M19,16.685c0,0-2.225-9.732-11-9.732V2.969L1,9.542l7,6.69v-4.357C12.763,11.874,16.516,12.296,19,16.685z"/>
+                                    </svg>
+                                </button>
+                                <button type="button" class="hidden group-hover:block flex flex-shrink-0 focus:outline-none mx-2 block rounded-full text-gray-500 hover:text-gray-900 hover:bg-gray-700 bg-gray-800 w-8 h-8 p-2">
+                                    <svg viewBox="0 0 24 24" class="w-full h-full fill-current">
+                                        <path
+                                                d="M12 22a10 10 0 1 1 0-20 10 10 0 0 1 0 20zm0-2a8 8 0 1 0 0-16 8 8 0 0 0 0 16zm-3.54-4.46a1 1 0 0 1 1.42-1.42 3 3 0 0 0 4.24 0 1 1 0 0 1 1.42 1.42 5 5 0 0 1-7.08 0zM9 11a1 1 0 1 1 0-2 1 1 0 0 1 0 2zm6 0a1 1 0 1 1 0-2 1 1 0 0 1 0 2z"/>
+                                    </svg>
+                                </button>
+                            </div>
+                            <div class="flex items-center flex-row-reverse group">
+                                <p class="px-6 py-3 rounded-b-full rounded-l-full bg-blue-700 max-w-xs lg:max-w-md">Lorem ipsum
+                                    dolor sit
+                                    amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+                                    dolore magna aliqua. Volutpat lacus laoreet non curabitur gravida.</p>
+                                <button type="button" class="hidden group-hover:block flex flex-shrink-0 focus:outline-none mx-2 block rounded-full text-gray-500 hover:text-gray-900 hover:bg-gray-700 bg-gray-800 w-8 h-8 p-2">
+                                    <svg viewBox="0 0 20 20" class="w-full h-full fill-current">
+                                        <path d="M10.001,7.8C8.786,7.8,7.8,8.785,7.8,10s0.986,2.2,2.201,2.2S12.2,11.215,12.2,10S11.216,7.8,10.001,7.8z
+	 M3.001,7.8C1.786,7.8,0.8,8.785,0.8,10s0.986,2.2,2.201,2.2S5.2,11.214,5.2,10S4.216,7.8,3.001,7.8z M17.001,7.8
+	C15.786,7.8,14.8,8.785,14.8,10s0.986,2.2,2.201,2.2S19.2,11.215,19.2,10S18.216,7.8,17.001,7.8z"/>
+                                    </svg>
+                                </button>
+                                <button type="button" class="hidden group-hover:block flex flex-shrink-0 focus:outline-none mx-2 block rounded-full text-gray-500 hover:text-gray-900 hover:bg-gray-700 bg-gray-800 w-8 h-8 p-2">
+                                    <svg viewBox="0 0 20 20" class="w-full h-full fill-current">
+                                        <path d="M19,16.685c0,0-2.225-9.732-11-9.732V2.969L1,9.542l7,6.69v-4.357C12.763,11.874,16.516,12.296,19,16.685z"/>
+                                    </svg>
+                                </button>
+                                <button type="button" class="hidden group-hover:block flex flex-shrink-0 focus:outline-none mx-2 block rounded-full text-gray-500 hover:text-gray-900 hover:bg-gray-700 bg-gray-800 w-8 h-8 p-2">
+                                    <svg viewBox="0 0 24 24" class="w-full h-full fill-current">
+                                        <path
+                                                d="M12 22a10 10 0 1 1 0-20 10 10 0 0 1 0 20zm0-2a8 8 0 1 0 0-16 8 8 0 0 0 0 16zm-3.54-4.46a1 1 0 0 1 1.42-1.42 3 3 0 0 0 4.24 0 1 1 0 0 1 1.42 1.42 5 5 0 0 1-7.08 0zM9 11a1 1 0 1 1 0-2 1 1 0 0 1 0 2zm6 0a1 1 0 1 1 0-2 1 1 0 0 1 0 2z"/>
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="chat-footer flex-none">
+                    <div class="flex flex-row items-center p-4">
+                        <button type="button" class="flex flex-shrink-0 focus:outline-none mx-2 block text-blue-600 hover:text-blue-700 w-6 h-6">
+                            <svg viewBox="0 0 20 20" class="w-full h-full fill-current">
+                                <path d="M10,1.6c-4.639,0-8.4,3.761-8.4,8.4s3.761,8.4,8.4,8.4s8.4-3.761,8.4-8.4S14.639,1.6,10,1.6z M15,11h-4v4H9  v-4H5V9h4V5h2v4h4V11z"/>
+                            </svg>
+                        </button>
+                        <button type="button" class="flex flex-shrink-0 focus:outline-none mx-2 block text-blue-600 hover:text-blue-700 w-6 h-6">
+                            <svg viewBox="0 0 20 20" class="w-full h-full fill-current">
+                                <path d="M11,13 L8,10 L2,16 L11,16 L18,16 L13,11 L11,13 Z M0,3.99406028 C0,2.8927712 0.898212381,2 1.99079514,2 L18.0092049,2 C19.1086907,2 20,2.89451376 20,3.99406028 L20,16.0059397 C20,17.1072288 19.1017876,18 18.0092049,18 L1.99079514,18 C0.891309342,18 0,17.1054862 0,16.0059397 L0,3.99406028 Z M15,9 C16.1045695,9 17,8.1045695 17,7 C17,5.8954305 16.1045695,5 15,5 C13.8954305,5 13,5.8954305 13,7 C13,8.1045695 13.8954305,9 15,9 Z" />
+                            </svg>
+                        </button>
+                        <button type="button" class="flex flex-shrink-0 focus:outline-none mx-2 block text-blue-600 hover:text-blue-700 w-6 h-6">
+                            <svg viewBox="0 0 20 20" class="w-full h-full fill-current">
+                                <path d="M0,6.00585866 C0,4.89805351 0.893899798,4 2.0048815,4 L5,4 L7,2 L13,2 L15,4 L17.9951185,4 C19.102384,4 20,4.89706013 20,6.00585866 L20,15.9941413 C20,17.1019465 19.1017876,18 18.0092049,18 L1.99079514,18 C0.891309342,18 0,17.1029399 0,15.9941413 L0,6.00585866 Z M10,16 C12.7614237,16 15,13.7614237 15,11 C15,8.23857625 12.7614237,6 10,6 C7.23857625,6 5,8.23857625 5,11 C5,13.7614237 7.23857625,16 10,16 Z M10,14 C11.6568542,14 13,12.6568542 13,11 C13,9.34314575 11.6568542,8 10,8 C8.34314575,8 7,9.34314575 7,11 C7,12.6568542 8.34314575,14 10,14 Z"/>
+                            </svg>
+                        </button>
+                        <button type="button" class="flex flex-shrink-0 focus:outline-none mx-2 block text-blue-600 hover:text-blue-700 w-6 h-6">
+                            <svg viewBox="0 0 20 20" class="w-full h-full fill-current">
+                                <path d="M9,18 L9,16.9379599 C5.05368842,16.4447356 2,13.0713165 2,9 L4,9 L4,9.00181488 C4,12.3172241 6.6862915,15 10,15 C13.3069658,15 16,12.314521 16,9.00181488 L16,9 L18,9 C18,13.0790094 14.9395595,16.4450043 11,16.9378859 L11,18 L14,18 L14,20 L6,20 L6,18 L9,18 L9,18 Z M6,4.00650452 C6,1.79377317 7.79535615,0 10,0 C12.209139,0 14,1.79394555 14,4.00650452 L14,8.99349548 C14,11.2062268 12.2046438,13 10,13 C7.790861,13 6,11.2060545 6,8.99349548 L6,4.00650452 L6,4.00650452 Z" />
+                            </svg>
+                        </button>
+                        <div class="relative flex-grow">
+                            <label>
+                                <input class="rounded-full py-2 pl-3 pr-10 w-full border border-gray-800 focus:border-gray-700 bg-gray-800 focus:bg-gray-900 focus:outline-none text-gray-200 focus:shadow-md transition duration-300 ease-in"
+                                       type="text" value="" placeholder="Aa"/>
+                                <button type="button" class="absolute top-0 right-0 mt-2 mr-3 flex flex-shrink-0 focus:outline-none block text-blue-600 hover:text-blue-700 w-6 h-6">
+                                    <svg viewBox="0 0 20 20" class="w-full h-full fill-current">
+                                        <path d="M10 20a10 10 0 1 1 0-20 10 10 0 0 1 0 20zm0-2a8 8 0 1 0 0-16 8 8 0 0 0 0 16zM6.5 9a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm7 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm2.16 3a6 6 0 0 1-11.32 0h11.32z" />
+                                    </svg>
+                                </button>
+                            </label>
+                        </div>
+                        <button type="button" class="flex flex-shrink-0 focus:outline-none mx-2 block text-blue-600 hover:text-blue-700 w-6 h-6">
+                            <svg viewBox="0 0 20 20" class="w-full h-full fill-current">
+                                <path d="M11.0010436,0 C9.89589787,0 9.00000024,0.886706352 9.0000002,1.99810135 L9,8 L1.9973917,8 C0.894262725,8 0,8.88772964 0,10 L0,12 L2.29663334,18.1243554 C2.68509206,19.1602453 3.90195042,20 5.00853025,20 L12.9914698,20 C14.1007504,20 15,19.1125667 15,18.000385 L15,10 L12,3 L12,0 L11.0010436,0 L11.0010436,0 Z M17,10 L20,10 L20,20 L17,20 L17,10 L17,10 Z"/>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+</div>
+
+  </body>
+
+
+</html>

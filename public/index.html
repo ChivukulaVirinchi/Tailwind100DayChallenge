@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gurujada's Home</title>
+    <link href="/build/tailwind.css" rel="stylesheet">
+</head>
+
+<body class="antialiased overflow-hidden">
+    <nav class="flex bg-gray-900 items-center justify-between lg:px-16 px-4 py-2">
+        <a href="#"><img class="h-12" src="/images/Monogram_OO.svg" alt="Logo"></a>
+
+        <ol class="items-center space-x-4 font-semibold lg:flex hidden">
+            <a href="#" class="text-gray-300 hover:text-gray-500">
+                <li>Why Gurujada?</li>
+            </a>
+            <a href="#" class="text-gray-300 hover:text-gray-500">
+                <li>Explore</li>
+            </a> <a href="#" class="text-gray-300 hover:text-gray-500">
+                <li>Pricing</li>
+            </a>
+        </ol> <a href="#" class="text-gray-400 px-4 py-2 rounded-lg border hover:text-gray-500 border-gray-600">Sign
+            in</a>
+    </nav>
+    <section class="bg-center bg-no-repeat min-h-screen bg-cover relative bg-gray-900"
+        style="background-image:url(/images/bg.svg);">
+        <div class="absolute inset-0 bg-gray-900 opacity-90 min-h-screen z-10"></div>
+        <div class="flex my-auto pb-10 h-screen">
+            <div class="relative z-20 lg:flex items-center justify-between w-4/5 max-w-4xl mx-auto">
+                <div class="lg:w-1/2 w-full p-2">
+                    <h1 class="lg:text-6xl text-4xl font-bold text-gray-100 leading-tight text-center">This is Home</h1>
+                    <h6 class="lg:text-3xl text-xl mt-2 text-center leading-snug tracking-tight text-gray-500">
+                        Experts • Expertise • Exchange</h6>
+                </div>
+                <div class="lg:w-3/5 w-full pb-10 lg:px-6 mt-8 lg:mt-0">
+                    <form class="bg-white rounded border border-gray-100 py-4 px-8">
+                        <h6 class="text-gray-800 font-medium">Username</h6>
+                        <div class="flex w-full my-2">
+                            <span
+                                class="my-auto py-2 px-1 text-sm rounded-l-lg text-gray-600 border">https://gurujada.com/</span>
+                            <input type="text" name="Username"
+                                class="lg:w-px w-full rounded-l-none rounded-r-lg text-sm flex-1 focus:shadow-outline focus:outline-none py-2 px-3 border border-gray-400 text-gray-900 font-medium">
+                        </div>
+                        <h6 class="text-gray-800 font-medium mt-6">Email</h6>
+                        <input type="text" name="email"
+                            class="rounded focus:outline-none mt-1 border border-gray-400 w-full px-4 py-2 focus:shadow-outline"
+                            placeholder="">
+                        <h6 class="text-gray-800 font-medium mt-6">Password</h6>
+                        <input type="text" name="password"
+                            class="rounded focus:outline-none mt-1 border border-gray-400 w-full px-4 py-2 focus:shadow-outline"
+                            placeholder="">
+                        <p class="text-xs text-gray-600 my-3">Make sure it's at least 15 characters OR at least 8
+                            characters including a number and a lowercase letter. <a class="underline text-blue-600"
+                                href="#">Learn more</a>.</p>
+                        <button
+                            class="w-full bg-orange-500 focus:outline-none shadow-md text-white text-lg px-6 py-3 rounded-sm my-4 font-semibold hover:bg-orange-400 focus:bg-orange -600">Sign
+                            Up for Gurujada</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+
+</html>

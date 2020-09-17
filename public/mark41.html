@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Form</title>
+    <link href="/build/tailwind.css" rel="stylesheet">
+    <meta name="description" content="Your gorgeous description">
+    <link href="URL" rel="canonical">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tailwindcss/ui@latest/dist/tailwind-ui.min.css">
+</head>
+<style>
+    html {
+    overflow: scroll;
+    overflow-x: hidden;
+}
+::-webkit-scrollbar {
+    width: 0px;  /* Remove scrollbar space */
+    background: transparent;  /* Optional: just make scrollbar invisible */
+}
+   
+</style>
+
+<body>
+    <div class="h-screen lg:flex max-w-4xl lg:max-w-full">
+        <div class="lg:w-1/2 p-8 overflow-y-scroll scrolling-touch h-full">
+            <h1 class="lg:text-4xl text-5xl font-extrabold tracking-tight text-gray-800 leading-tight">Let's work together!</h1>
+            <p class="text-gray-500 text-2xl lg:text-lg">We'd love to work with you! Send us a message using the form
+                below, or
+                email us. We'd love to hear from you! We'd love to work with you! Send us a message using the form
+                below.</p>
+            <img class="lg:hidden rounded-lg w-full object-cover"
+                src="https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=600&q=60"
+                alt="Work">
+            <div class="lg:pr-20">
+                <div class="flex mt-6">
+                    <div class="w-1/2 mr-10">
+                        <h6 class="font-medium text-gray-600 text-2xl lg:text-base">First name</h6>
+                        <input
+                            class="bg-cool-gray-50 w-full mt-1.5 rounded-md px-6 py-4 lg:px-4 lg:py-2 focus:outline-none border focus:bg-gray-100 focus:shadow-outline"
+                            name="Name" type="text">
+                    </div>
+                    <div class="w-1/2">
+                        <h6 class="font-medium text-gray-600 text-2xl lg:text-base">Last name</h6>
+                        <input
+                            class="bg-cool-gray-50 w-full mt-1.5 rounded-md px-6 py-4 lg:px-4 lg:py-2 focus:outline-none border focus:bg-gray-100 focus:shadow-outline"
+                            name="Name" type="text">
+                    </div>
+                </div>
+
+                <h6 class="font-medium text-gray-600 mt-6 text-2xl lg:text-base">Email</h6>
+                <input
+                    class="bg-cool-gray-50 mt-1.5 rounded-md px-6 py-4 lg:px-4 lg:py-2 focus:outline-none border focus:shadow-outline w-full"
+                    name="Name" type="text">
+
+                <h6 class="font-medium text-gray-600 mt-6 text-2xl lg:text-base">Company</h6>
+                <input
+                    class="bg-cool-gray-50 mt-1.5 rounded-md px-6 py-4 lg:px-4 lg:py-2 focus:outline-none border focus:shadow-outline w-full"
+                    name="Name" type="text">
+
+                <div class="flex mt-6 justify-between pr-4">
+                    <label class="font-medium text-gray-600 text-2xl lg:text-base">Phone</label>
+                    <label class="text-gray-500 text-2xl lg:text-base">Optional</label>
+                </div>
+                <input
+                    class="bg-cool-gray-50 mt-1.5 rounded-md px-6 py-4 lg:px-4 lg:py-2 focus:outline-none border focus:shadow-outline w-full"
+                    name="Name" type="text">
+                <div class="flex mt-6 justify-between pr-4">
+                    <label class="font-medium text-gray-600 text-2xl lg:text-base">How can we help you?</label>
+                    <label class="text-gray-500 text-2xl lg:text-base">Max. 500 charactars</label>
+                </div>
+                <textarea class="form-textarea mt-1 w-full" rows="3"></textarea>
+                <label class="font-medium text-gray-600 text-2xl lg:text-base">Expected budget</label><br>
+                <input type="radio" class="form-radio" name="Expected Salary" value="">
+                <span class="leading-7 text-gray-700 text-sm">Less than ₹25K</span><br>
+                <input type="radio" class="form-radio" name="Expected Salary" value="">
+                <span class="leading-7 text-gray-700 text-sm">₹25k - ₹50k</span><br>
+                <input type="radio" class="form-radio" name="Expected Salary" value="">
+                <span class="leading-7 text-gray-700 text-sm">₹50k - ₹100k</span><br>
+                <input type="radio" class="form-radio" name="Expected Salary" value="">
+                <span class="leading-7 text-gray-700 text-sm">₹100k+</span><br>
+
+                <h6 class="font-medium text-gray-600 mt-6 text-2xl lg:text-base">How did you hear about us?</h6>
+                <input
+                    class="bg-cool-gray-50 mt-1.5 rounded-md px-6 py-4 lg:px-4 lg:py-2 focus:outline-none border focus:shadow-outline w-full"
+                    name="Name" type="text">
+                <div class="flex justify-end">
+                    <button
+                        class="bg-purple-600 focus:outline-none focus:shadow-outline text-white font-semibold text-2xl lg:text-lg mt-4 px-4 py-2 rounded-lg shadow-lg hover:bg-purple-500 hover:text-purple-100 transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110">Submit</button>
+                </div>
+            </div>
+    </div>
+        <div class="lg:w-1/2 hidden lg:block"><img class="h-full overflow-hidden object-cover"
+                src="https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=600&q=60"
+                alt="Work"></div>
+
+    </div>
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Preview Card</title>
+    <link rel="stylesheet" href="/build/tailwind.css">
+    <script src="https://use.fontawesome.com/dc672ebcd1.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v1.9.8/dist/alpine.js" defer></script>
+</head>
+
+
+<body>
+        <div class="container mx-auto px-4" x-data="{ quote: '' }"
+            x-init="fetch('https://api.kanye.rest')
+            .then(response => response.json())
+            .then(data => quote = data.quote)">
+            <div class="flex items-center text-center justify-center h-screen text-2xl italic"
+                x-text="`&quot;${quote}&quot;`">
+                Quote goes here</div>
+        </div>
+</body>
+
+
+</html>

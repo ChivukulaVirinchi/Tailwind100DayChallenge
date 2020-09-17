@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile Card</title>
+    <link rel="stylesheet" href="/build/tailwind.css">
+    <script src="https://use.fontawesome.com/dc672ebcd1.js"></script>
+</head>
+
+<body>
+    <div class="h-screen bg-gray-300 flex">
+        <div class="bg-white mx-auto my-auto flex rounded-lg overflow-hidden w-2/3">
+            <div class="w-1/4">
+                <img class="object-cover object-center"
+                    src="data:image/jpeg;base64,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"
+                    alt=""></div>
+            <div class="w-3/4">
+                <h1 class="mx-8 py-2 text-xl font-semibold">Does coffee make you a better developer?</h1>
+                <p class="px-8 py-2 tracking-tight leading-relaxed mb-4 text-sm">Lorem Ipsum is simply dummy text of the
+                    printing and
+                    typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+                    when an unknown printer took a galley of type and scrambled it.
+                </p>
+
+                <div class="flex justify-end mr-12 mb-4"><button
+                        class="bg-indigo-500 font-semibold capitalize px-2 py-1 text-white rounded-lg shadow-lg transition duration-500 ease-in-out hover:bg-green-500 transform hover:-translate-y-1 hover:scale-110">Read
+                        on!</button></div>
+            </div>
+            <button class=" bg-blue-500 hover:bg-red-500 transform hover:-translate-y-1 hover:scale-110 ...">
+
+        </div>
+
+    </div>
+
+
+
+
+</body>
+
+</html>

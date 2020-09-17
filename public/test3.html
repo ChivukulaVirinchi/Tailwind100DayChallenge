@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Preview Card</title>
+    <link rel="stylesheet" href="/build/tailwind.css">
+    <script src="https://use.fontawesome.com/dc672ebcd1.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v1.9.8/dist/alpine.js" defer></script>
+</head>
+
+<body>
+
+
+    <div class="container mx-auto px-4 mt-4" x-data="{ image: 'image1' }">
+        <div>
+            <img src="https://images.unsplash.com/photo-1593642532744-d377ab507dc8?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=600&q=60"
+                alt="mac pro" x-show="image === 'image1'">
+            <img src="https://images.unsplash.com/photo-1597197150387-9ea320b60a97?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=600&q=60"
+                alt="mac pro" x-show="image === 'image2'">
+            <img src="https://images.unsplash.com/photo-1597190910481-5a6e500f0fe6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=600&q=60"
+                alt="mac pro" x-show="image === 'image3'">
+        </div>
+        <div class="flex items-center mt-4">
+            <a href="#" class="border border-transparent hover:border-blue-500" :class="{ 'border-blue-500' : image === 'image1' }" @click.prevent="image = 'image1'"><img
+                    src="https://images.unsplash.com/photo-1593642532744-d377ab507dc8?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=600&q=60"
+                    alt="mac pro" class="w-12"></a>
+            <a href="#" class="border border-transparent hover:border-blue-500 ml-2" :class="{ 'border-blue-500' : image === 'image2' }"
+                @click.prevent="image = 'image2'"><img
+                    src="https://images.unsplash.com/photo-1597197150387-9ea320b60a97?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=600&q=60"
+                    alt="mac pro" class="w-12"></a>
+            <a href="#" class="border border-transparent hover:border-blue-500 ml-2" :class="{ 'border-blue-500' : image === 'image3' }"
+                @click.prevent="image = 'image3'"><img
+                    src="https://images.unsplash.com/photo-1597190910481-5a6e500f0fe6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=600&q=60"
+                    alt="mac pro" class="w-12"></a>
+        </div>
+
+
+</body>
+
+</html>

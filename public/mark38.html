@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hero Section</title>
+    <link href="/build/tailwind.css" rel="stylesheet">
+    <meta name="description" content="Your gorgeous description">
+    <link href="URL" rel="canonical">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tailwindcss/ui@latest/dist/tailwind-ui.min.css">
+</head>
+
+
+<body>
+
+    <div class="h-screen bg-white flex items-center justify-center">
+
+        <div class="lg:mx-64 mx-10">
+            <img class="mx-auto h-32 w-56" src="data:image/png;base64,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" alt="Nike Logo">
+            <h1 class="text-5xl font-bold text-gray-800 text-center">Just do <span class="text-indigo-500">it!</span>
+            </h1>
+
+            <p class="text-gray-400 text-center px-10 lg:px-32">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius
+                magnam, vero consequatur nisi molestias iusto at itaque.</p>
+            <div class="flex justify-center mt-4">
+                <button
+                    class="rounded-lg px-4 py-2 mx-4 bg-indigo-500 text-indigo-100 font-semibold hover:bg-indigo-400 text-lg lg:text-base focus:outline-none focus:shadow-outline-indigo focus:shadow-inset  duration-500 ease-in-out bg-blue-500 hover:bg-red-500 transform hover:-translate-y-1 hover:scale-110 tranition">Learn
+                    More</button>
+                    
+                    <button
+                    class="rounded-lg px-4 py-2 bg-indigo-100 text-indigo-500 font-semibold hover:bg-indigo-200 text-lg lg:text-base focus:outline-none focus:shadow-outline-indigo focus:shadow-inset  duration-500 ease-in-out bg-blue-500 hover:bg-red-500 transform hover:-translate-y-1 hover:scale-110 tranition">Learn
+                    More</button>
+            </div>
+        </div>
+
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <body>
+    <div class="relative bg-white overflow-hidden">
+        <div class="max-w-screen-xl mx-auto">
+            <div class="relative z-10 pb-8 bg-white sm:pb-16 md:pb-20 lg:max-w-2xl lg:w-full lg:pb-28 xl:pb-32">
+                <svg class="hidden lg:block absolute right-0 inset-y-0 h-full w-48 text-white transform translate-x-1/2"
+                    fill="currentColor" viewBox="0 0 100 100" preserveAspectRatio="none">
+                    <polygon points="50,0 100,0 50,100 0,100" />
+                </svg>
+
+                <div class="relative pt-6 px-4 sm:px-6 lg:px-8">
+                    <nav class="relative flex items-center justify-between sm:h-10 lg:justify-start">
+                        <div class="flex items-center">
+                            <div class="flex items-center w-full md:w-auto">
+                                <a href="#" aria-label="Home">
+                                    <svg class="lg:h-28 sm:h-10 w-auto" id="Layer_1" data-name="Layer 1"
+                                        xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 1080">
+                                        <defs>
+                                            <style>
+                                                .cls-1 {
+                                                    fill: #f60;
+                                                }
+                                            </style>
+                                        </defs>
+                                        <title>Monogram_O</title>
+                                        <polygon class="cls-1"
+                                            points="607.83 426.33 555.2 433.72 543.85 291.56 597.36 287.99 607.83 426.33" />
+                                        <polygon class="cls-1"
+                                            points="535.08 443.72 494.25 471.29 425.62 341.84 469.44 319.42 535.08 443.72" />
+                                        <polygon class="cls-1"
+                                            points="481.08 490.44 463.69 532.27 353.25 440.71 377.03 401.3 481.08 490.44" />
+                                        <polygon class="cls-1"
+                                            points="464.01 600.05 340 560.64 341.36 514.43 463.24 554.78 464.01 600.05" />
+                                        <polygon class="cls-1"
+                                            points="490.73 657.81 380.77 672.42 362.42 631.99 470.63 620.14 490.73 657.81" />
+                                        <polygon class="cls-1"
+                                            points="536.04 697.95 505.27 673.31 426.98 724.06 456.54 751.24 536.04 697.95" />
+                                        <polygon class="cls-1"
+                                            points="586.91 715.65 553.94 704.43 511.91 777.74 545.55 790.31 586.91 715.65" />
+                                        <polygon class="cls-1"
+                                            points="627.43 789.97 597.3 792.01 600.33 714.83 630.45 711.76 627.43 789.97" />
+                                        <polygon class="cls-1"
+                                            points="690.45 759.39 668.2 772.48 641.33 705.35 664.09 692.43 690.45 759.39" />
+                                        <polygon class="cls-1"
+                                            points="728 710.92 715.54 729.72 669.9 681.6 682.82 662.35 728 710.92" />
+                                        <polygon class="cls-1"
+                                            points="737.96 676.04 683.28 650.44 685.15 628.21 740 653.62 737.96 676.04" />
+                                        <polygon class="cls-1"
+                                            points="734.79 619.42 684.13 618.55 678.47 597.71 729.13 599.03 734.79 619.42" />
+                                        <polygon class="cls-1"
+                                            points="603.48 554.59 588.53 560.48 575.56 524.29 590.51 517.95 603.48 554.59" />
+                                        <polygon class="cls-1"
+                                            points="625.67 557.5 609.14 554.79 615.88 515.68 632.41 518.4 625.67 557.5" />
+                                        <polygon class="cls-1"
+                                            points="674.99 536.07 660.04 525.65 633.61 559.79 650.35 569.19 674.99 536.07" />
+                                        <polygon class="cls-1"
+                                            points="672.2 589.76 711.23 570.95 699.91 555.32 658.37 574.66 672.2 589.76" />
+                                    </svg>
+
+                                </a>
+                                <h1 class="uppercase text-xl text-orange-500 font-bold">gurujada</h1>
+
+                            </div>
+                        </div>
+                        
+                    </nav>
+                </div>
+
+                
+
+                <main class="mt-10 mx-auto max-w-screen-xl sm:mt-12 sm:px-6 md:mt-16 lg:mt-20 xl:mt-28">
+                    <div class="sm:text-center lg:text-left">
+                        <h2
+                            class="text-4xl tracking-tight leading-10 font-bold text-gray-900 sm:text-5xl sm:leading-none md:text-6xl">
+                            Let's go Online!
+                            <br>
+                            <span class="text-orange-500 text-3xl font-bold tracking-wide">Teachers | Students | Classes
+                            </span>
+                        </h2>
+                        <p
+                            class="mt-3 text-base text-gray-500 sm:mt-5 sm:text-lg sm:max-w-xl sm:mx-auto md:mt-5 md:text-xl lg:mx-0">
+                            Live classes, assignments and real time communication on any device.
+                        </p>
+                        <div class="mt-5 sm:mt-8 sm:flex sm:justify-center lg:justify-start">
+                            <div class="rounded-md shadow">
+                                <a href="#"
+                                    class="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base leading-6 font-medium rounded-md text-white bg-orange-400 hover:bg-orange-300 focus:outline-none focus:border-indigo-700 focus:shadow-outline-indigo transition duration-150 ease-in-out md:py-4 md:text-lg md:px-10">
+                                    I'm Curious!
+                                </a>
+                            </div>
+                            <div class="mt-3 sm:mt-0 sm:ml-3">
+                                <a href="#"
+                                    class="w-full flex items-center text-orange-500 justify-center px-8 py-3 border border-transparent text-base leading-6 font-medium rounded-md bg-orange-100 hover:bg-orange-50 focus:outline-none focus:shadow-outline-indigo focus:border-indigo-300 transition duration-150 ease-in-out md:py-4 md:text-lg md:px-10">
+                                    Live demo
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </main>
+            </div>
+        </div>
+        <div class="lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2 hidden md:block">
+            <img class="h-56 w-full object-cover sm:h-72 md:h-96 lg:w-full lg:h-full"
+                src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80"
+                alt="" />
+        </div>
+    </div>
+
+
+
+    <div class="flex flex-wrap lg:py-16 ml-6 xl:ml-32">
+        <div class="lg:w-1/3 py-4"><label class="text-indigo-600 font-semibold bg-indigo-100 rounded-full px-1">It's Easy</label>
+            <h4 class="text-3xl text-gray-800 leading-tight font-semibold">So easy that you can get started in minutes.
+            </h4>
+            <p class="mt-3 text-gray-500">Gurujada puts together the tools you need to run online classes and manage
+                teacher, student communication into a neat solution.</p>
+            <p class="mt-2 text-gray-500">Whether you are a large institution or a solo teacher, we have you covered.
+            </p><button class="bg-blue-600 text-white rounded-lg text-sm px-4 py-2 mt-4 hover:bg-blue-700">Find out
+                more</button>
+        </div>
+        <div class="lg:w-1/4 lg:mx-10 mt-8"><img class="rounded-lg mb-2"
+                src="https://gurujada.com/packs/media/images/home/md-bg-1-f5ceac9f7e3b589c7985cb1daacc286b.jpg"
+                alt="Gurujada"><label class="font-semibold text-xl">Live Classes</label>
+            <p class="text-gray-500 pt-1">Feel at class with options to safely run classes online, with whiteboard,
+                audio, video capabilities. Use live quizzes to keep students alert.</p>
+        </div>
+        <div class="lg:w-1/4 my-8"><img class="rounded-lg mb-2"
+                src="https://gurujada.com/packs/media/images/home/md-bg-2-8a4e47137ac68524e0dac20be200b62f.jpg"
+                alt="Gurujada"><label class="font-semibold text-xl">Collaboration and Administration
+            </label>
+            <p class="text-gray-500 pt-1">Built-in privacy protection, so you can control who has access to what.
+                Real-time messaging helps teachers and students stay connected.
+
+            </p>
+        </div>
+    </div>
+
+
+    <section class="flex flex-wrap bg-blue-100 py-10 px-24">
+
+        <div
+            class="p-1 lg:w-40 w-full mx-2 sm:w-aumd border bg-white mt-4 mr-1 shadow-lg transition duration-500 ease-in-out hover:bg-blue-500 transform hover:-translate-y-1 hover:scale-115 rounded-lg hover:text-white">
+            <img class="h-20 w-20 mx-auto"
+                src="https://gurujada.com/packs/media/images/home/private_classes-044de8771d09882fe3717a7c73d28bbc.svg"
+                alt="Private classes">
+                <h3 class="leading-tight font-semibold text-center">Secure, private classes</h3>
+                <h6 class="text-center text-gray-500 text-sm">Outsiders can't join using a link</h6>
+        </div>
+
+        <div
+            class="p-1 lg:w-40 border mx-2 w-full md:w-auto mt-4 bg-white mr-1 shadow-lg transition duration-500 ease-in-out hover:bg-blue-500 transform hover:-translate-y-1 hover:scale-115 rounded-lg hover:text-white">
+            <img class="h-20 w-20 mx-auto"
+                src="https://gurujada.com/packs/media/images/home/interactive_whiteboard-a5a7c70f20b401742be6f9825eb97fd8.svg"
+                alt="Private classes">
+                <h3 class="leading-tight font-semibold text-center">Rich, Interactive Whiteboard</h3>
+                <h6 class="text-center text-gray-500 text-sm">Tools to make teaching fun</h6>
+        </div>
+
+        <div
+        class="p-1 lg:w-40 border mx-2 w-full md:w-auto mt-4 bg-white shadow-lg mr-1 transition duration-500 ease-in-out hover:bg-blue-500 transform hover:-translate-y-1 hover:scale-115 rounded-lg hover:text-white">
+        <img class="h-20 w-20 mx-auto"
+            src="https://gurujada.com/packs/media/images/home/modern_framework-4d823d20340f000467623d1460ff3b01.svg"
+            alt="Private classes">
+            <h3 class="leading-tight font-semibold text-center">Modern Framework</h3>
+            <h6 class="text-center text-gray-500 text-sm">Works well even on small frameworks</h6>
+    </div>
+
+
+    <div
+            class="p-1 lg:w-40 border mx-2 w-full md:w-auto mt-4 bg-white shadow-lg mr-1 transition duration-500 ease-in-out hover:bg-blue-500 transform hover:-translate-y-1 hover:scale-115 rounded-lg hover:text-white">
+            <img class="h-20 w-20 mx-auto"
+                src="https://gurujada.com/packs/media/images/home/central_admin-d8c0302bc3446985d843b8c364bd3a0d.svg"
+                alt="Private classes">
+                <h3 class="leading-tight font-semibold text-center">Easy centralised administration</h3>
+                <h6 class="text-center text-gray-500 text-sm">Handle it without a big IT team</h6>
+        </div>
+
+
+        <div
+            class="p-1 lg:w-40 border mx-2 w-full md:w-auto mt-4 bg-white shadow-lg mr-1 transition duration-500 ease-in-out hover:bg-blue-500 transform hover:-translate-y-1 hover:scale-115 rounded-lg hover:text-white">
+            <img class="h-20 w-20 mx-auto"
+                src="https://gurujada.com/packs/media/images/home/realtime_collaboration-7197c3a3b6c77e002f48c85bc3dcf9a4.svg"
+                alt="Private classes">
+                <h3 class="leading-tight font-semibold text-center">Real time collaboration</h3>
+                <h6 class="text-center text-gray-500 text-sm">Assignments, doubts and feedback</h6>
+        </div>
+
+
+        <div
+            class="p-1 lg:w-40 border mx-2 w-full md:w-auto mt-4 bg-white shadow-lg transition duration-500 ease-in-out hover:bg-blue-500 transform hover:-translate-y-1 hover:scale-115 rounded-lg hover:text-white">
+            <img class="h-20 w-20 mx-auto"
+                src="https://gurujada.com/packs/media/images/home/information_on_fingertips-23ccf44c942a832b560cce8d28907624.svg"
+                alt="Private classes">
+                <h3 class="leading-tight font-semibold text-center">Information on fingertips</h3>
+                <h6 class="text-center text-gray-500 text-sm">Monitor all classes at a time</h6>
+        </div>
+    </section>
+
+    <div class="bg-gray-900 h-full">
+        <div class="pt-12 pb-4">
+            <h6 class="font-medium text-gray-400 uppercase text-center lg:-mb-4">pricing</h6>
+ <h1 class="text-gray-100 text-center font-bold lg:text-5xl text-3xl">The right price for you, whoever you are</h1>
+ <p class="text-center text-gray-400 lg:text-2xl text-lg lg:mx-32">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum ipsa est eius adipisci exercitationem odio quis aspernatur!</p>      
+ </div>
+            
+         <div class="flex flex-wrap items-center justify-center py-10">
+            <div class="w-11/12 bg-white overflow-hidden max-w-lg rounded-lg md:w-1/2 lg:w-auto pt-8 mb-4 lg:mb-0">
+             <div class="">
+                 <h1 class="text-4xl lg:text-2xl text-center text-gray-800 font-semibold">Hobby</h1>
+                 <h1 class="text-6xl tracking-wide font-extrabold text-center"><sup class="text-5xl font-normal text-gray-500">$
+                 </sup>79<br class="lg:hidden"><span class="lg:pl-2 text-gray-500 font-normal text-4xl">/month</span></h1>
+             </div>
+             <div class="bg-gray-300 w-full p-6">
+                 <h4 class="text-gray-600 text-xl md:text-lg"><svg
+                     class="inline fill-current text-green-500 pr-4 w-12 h-16" xmlns="http://www.w3.org/2000/svg"
+                     width="24" height="24" viewBox="0 0 24 24">
+                     <path d="M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z" /></svg>Pariatur quod similique</h4>
+                     <h4 class="text-gray-600 text-xl md:text-lg"><svg
+                         class="inline fill-current text-green-500 pr-4 w-12 h-16" xmlns="http://www.w3.org/2000/svg"
+                         width="24" height="24" viewBox="0 0 24 24">
+                         <path d="M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z" /></svg>Sapiente libero doloribus</h4>
+                 <h4 class="text-gray-600 text-xl md:text-lg"><svg
+                     class="inline fill-current text-green-500 pr-4 w-12 h-16" xmlns="http://www.w3.org/2000/svg"
+                     width="24" height="24" viewBox="0 0 24 24">
+                     <path d="M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z" /></svg>Vel ipsa esse repundiandae</h4>
+                 <button
+                 class="bg-white focus:outline-none focus:shadow-outline text-purple-600 font-semibold text-2xl w-full mt-4 py-4 rounded-lg shadow-lg hover:bg-purple-600 hover:text-white transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110">Start
+                 your trial</button>
+             </div>
+         </div>
+         <div class="w-11/12 bg-white max-w-lg rounded-lg md:w-1/2 lg:w-1/2 border-2 border-purple-700">
+             <div class="flex-col py-12">
+                 <div class="bg-purple-700 w-32 rounded-full mx-auto -mt-16">
+                     <h1 class="text-white text-center uppercase">most popular</h1>
+                 </div>
+                 <h1 class="text-4xl lg:text-2xl text-center text-gray-800 font-semibold">Growth</h1>
+                 <h1 class="text-6xl tracking-wide font-extrabold text-center"><sup class="text-5xl font-semibold">$
+                 </sup>149<br class="lg:hidden"><span class="pl-2 text-gray-500 font-normal text-4xl">/month</span></h1>
+             </div>
+             <div class="bg-gray-300 w-full px-6 pb-6 rounded-b-lg pt-10">
+                 <h4 class="leading-tight lg:leading-snug text-gray-600 text-xl md:text-lg text-wrap"><svg
+                     class="inline fill-current text-green-500 pr-4 w-12 h-16" xmlns="http://www.w3.org/2000/svg"
+                     width="24" height="24" viewBox="0 0 24 24">
+                     <path d="M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z" /></svg>Quia rem est sed impedit magnam</h4>
+                     <h4 class="leading-tight lg:leading-snug text-gray-600 text-xl md:text-lg"><svg
+                         class="inline fill-current text-green-500 pr-4 w-12 h-16" xmlns="http://www.w3.org/2000/svg"
+                         width="24" height="24" viewBox="0 0 24 24">
+                         <path d="M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z" /></svg>Dolorem vero ratione voluptates</h4>
+                         <h4 class="leading-tight lg:leading-snug text-gray-600 text-xl md:text-lg"><svg
+                             class="inline fill-current text-green-500 pr-4 w-12 h-16" xmlns="http://www.w3.org/2000/svg"
+                         width="24" height="24" viewBox="0 0 24 24">
+                         <path d="M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z" /></svg>Qui sed ab doloribus voluptatem dolore</h4>
+                         <h4 class="leading-tight lg:leading-snug text-gray-600 text-xl md:text-lg"><svg
+                             class="inline fill-current text-green-500 pr-4 w-12 h-16" xmlns="http://www.w3.org/2000/svg"
+                             width="24" height="24" viewBox="0 0 24 24">
+                             <path d="M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z" /></svg>Laborum commodi molestiae id et fugiat</h4>
+                             <h4 class="leading-tight lg:leading-snug text-gray-600 text-xl md:text-lg"><svg
+                                 class="inline fill-current text-green-500 pr-4 w-12 h-16" xmlns="http://www.w3.org/2000/svg"
+                                 width="24" height="24" viewBox="0 0 24 24">
+                                 <path d="M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z" /></svg>Nam ut ipsa nesciunt culpa modi dolor</h4>
+                                 <button
+                                 class="bg-white focus:outline-none focus:shadow-outline text-purple-600 font-semibold text-2xl w-full mt-1 py-4 rounded-lg shadow-lg hover:bg-purple-600 hover:text-white transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110">Start
+                                 your trial</button>
+                             </div>
+                         </div>
+                       
+                         <div class="w-11/12 bg-white overflow-hidden max-w-lg rounded-lg md:w-1/2 lg:w-auto pt-8 mt-4 lg:mt-0">
+                             <div class="">
+                                 <h1 class="text-4xl lg:text-2xl text-center text-gray-800 font-semibold">Scale</h1>
+                                 <h1 class="text-6xl tracking-wide font-extrabold text-center"><sup class="text-5xl font-normal text-gray-500">$
+                                 </sup>349<br class="lg:hidden"><span class="lg:pl-2 text-gray-500 font-normal text-4xl">/month</span></h1>
+                             </div>
+                             <div class="bg-gray-300 w-full p-6">
+                                 <h4 class="text-gray-600 text-xl md:text-lg"><svg
+                                     class="inline fill-current text-green-500 pr-4 w-12 h-16" xmlns="http://www.w3.org/2000/svg"
+                                     width="24" height="24" viewBox="0 0 24 24">
+                                     <path d="M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z" /></svg>Pariatur quod similique</h4>
+                                     <h4 class="text-gray-600 text-xl md:text-lg"><svg
+                                         class="inline fill-current text-green-500 pr-4 w-12 h-16" xmlns="http://www.w3.org/2000/svg"
+                                         width="24" height="24" viewBox="0 0 24 24">
+                                         <path d="M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z" /></svg>Sapiente libero doloribus</h4>
+                                 <h4 class="text-gray-600 text-xl md:text-lg"><svg
+                                     class="inline fill-current text-green-500 pr-4 w-12 h-16" xmlns="http://www.w3.org/2000/svg"
+                                     width="24" height="24" viewBox="0 0 24 24">
+                                     <path d="M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z" /></svg>Vel ipsa esse repundiandae</h4>
+                                 <button
+                                 class="bg-white focus:outline-none focus:shadow-outline text-purple-600 font-semibold text-2xl w-full mt-4 py-4 rounded-lg shadow-lg hover:bg-purple-600 hover:text-white transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110">Start
+                                 your trial</button>
+                             </div>
+                         </div>
+                             
+                             
+                             
+                             
+                             
+                             
+ 
+                             
+                             
+                             
+                             
+                         </div>
+                         </div>
+
+
+</body> -->
